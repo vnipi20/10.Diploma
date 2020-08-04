@@ -1,0 +1,178 @@
+/* style popup */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(13, 0, 48, 0.67);
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+
+.popup-body {
+    padding: 2px 16px;
+}
+
+.popup-footer {
+    padding: 2px 16px;
+    background-color: #5c82b8;
+    color: white;
+}
+
+.popup-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+/* style popup */
+
+/*style img lighting */
+.conteiner {
+    width: 800px;
+    height: 500px;
+    margin: 10px auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid red;
+    width: 300px;
+}
+.buttons div {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 1;
+    /*background-color: rgba(0, 225, 255, 0);*/
+}
+.buttons div:hover {
+opacity: 0.8;
+}
+
+.buttons img {
+    width: 85px;
+    height: 75px;
+}
+
+.buttons label {
+    text-align: center;
+    display: block;
+    width: 115px;
+    height: 115px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.button-name {
+    height: 40px;
+    border-top: 2px solid black;
+    background: #0598b8;
+    text-align: center;
+    padding: 5px;
+}
+
+.windows {
+    flex: 1;
+    margin-left: 10px;
+    border: 1px solid black;
+}
+
+/* скрываем переключатели radio и окна контента */
+.window, .hidden {
+    display: none;
+}
+
+/* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+#tab-btn-1:checked ~ .windows #w1,
+#tab-btn-2:checked ~ .windows #w2,
+#tab-btn-3:checked ~ .windows #w3,
+#tab-btn-4:checked ~ .windows #w4,
+#tab-btn-5:checked ~ .windows #w5 {
+    display: block;
+}
+
+/* связываение кнопки и radio */
+#tab-btn-1:checked ~ .buttons [for="tab-btn-1"],
+#tab-btn-2:checked ~ .buttons [for="tab-btn-2"],
+#tab-btn-3:checked ~ .buttons [for="tab-btn-3"],
+#tab-btn-4:checked ~ .buttons [for="tab-btn-4"],
+#tab-btn-5:checked ~ .buttons [for="tab-btn-5"] {
+    background-color: rgba(169, 168, 192, 0.64);
+}
+
+.border-content {
+    width: 25px;
+}
+
+/*--оформление--*/
+#btn1,
+#btn2,
+#btn3,
+#btn4,
+#btn5,
+#btn6 {
+    border-radius: 3px;
+    border: 1px solid silver;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+#btn1:hover,
+#btn2:hover,
+#btn3:hover,
+#btn4:hover,
+#btn5:hover,
+#btn6:hover {
+    background: #b4cae9;
+}
+
+#btn1:active,
+#btn2:active,
+#btn3:active,
+#btn4:active,
+#btn5:active,
+#btn6:active {
+    background: cornflowerblue;
+}
+
+
+/*--оформление--*/
