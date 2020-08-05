@@ -59,7 +59,7 @@
 
 /*style img lighting */
 .conteiner {
-    width: 800px;
+    width: 850px;
     height: 500px;
     margin: 10px auto;
 }
@@ -72,11 +72,10 @@
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px;
-    border: 1px solid red;
-    width: 300px;
+    justify-content: flex-start;
+    width: 280px;
 }
+
 .buttons div {
     border: 2px solid black;
     border-radius: 5px;
@@ -84,8 +83,9 @@
     opacity: 1;
     /*background-color: rgba(0, 225, 255, 0);*/
 }
+
 .buttons div:hover {
-opacity: 0.8;
+    opacity: 0.8;
 }
 
 .buttons img {
@@ -105,7 +105,7 @@ opacity: 0.8;
 .button-name {
     height: 40px;
     border-top: 2px solid black;
-    background: #0598b8;
+    /* background: #0598b8;*/
     text-align: center;
     padding: 5px;
 }
@@ -113,6 +113,37 @@ opacity: 0.8;
 .windows {
     flex: 1;
     margin-left: 10px;
+    height: 300px;
+}
+
+.mod {
+    position: relative;
+    top: 1px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    width: 120px;
+    height: 40px;
+    border-top: 3px solid orangered;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-bottom-color: white;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.scroll {
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 40px;
+    font-weight: bold;
+}
+
+.wrap-catalog {
+    height: 210px;
     border: 1px solid black;
 }
 
@@ -149,20 +180,42 @@ opacity: 0.8;
 #btn3,
 #btn4,
 #btn5,
-#btn6 {
-    border-radius: 3px;
-    border: 1px solid silver;
-    padding: 6px;
+#btn6,
+#btn7,
+#btn8,
+#btn9,
+#btn10 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 40px;
+    padding: 10px;
     box-sizing: border-box;
+    cursor: pointer;
 }
+
+#w1 div:nth-child(2n+1) {
+    background: silver;
+}
+
+#w2 div:nth-child(2n+1) {
+    background: silver;
+}
+
 
 #btn1:hover,
 #btn2:hover,
 #btn3:hover,
 #btn4:hover,
 #btn5:hover,
-#btn6:hover {
+#btn6:hover,
+#btn7:hover,
+#btn8:hover,
+#btn9:hover,
+#btn10:hover {
     background: #b4cae9;
+    padding: 7px;
+    border: 3px solid orangered;
 }
 
 #btn1:active,
@@ -170,9 +223,36 @@ opacity: 0.8;
 #btn3:active,
 #btn4:active,
 #btn5:active,
-#btn6:active {
+#btn6:active,
+#btn7:active,
+#btn8:active,
+#btn9:active,
+#btn10:active {
     background: cornflowerblue;
 }
 
+.border-content {
+    width: 3px;
+    height: 395px;
+    margin: 10px 0 0 0;
+    background: #aaaaaa;
+}
+
+.btn-col1, .btn-col2, .btn-col4 {
+    width: 70px;
+}
+
+.btn-col3 {
+    width: 115px;
+}
+
+.btn-col5 {
+    word-wrap: break-word;
+    width: 110px;
+}
+
+.btn-col1, .btn-col2, .btn-col5 {
+    box-sizing: border-box;
+}
 
 /*--оформление--*/

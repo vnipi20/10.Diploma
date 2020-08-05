@@ -42,10 +42,10 @@
           {
             "name": "PRS/R ECO LED 595 HFD 4000K",
             "lightFlow": 4000,
-            "power": 32,
+            "power": 35,
             "lm_Wt": 125,
-            "length": 595,
-            "width": 595,
+            "length": 600,
+            "width": 600,
             "weight": 4.5,
             "article": 	1032000400
           }

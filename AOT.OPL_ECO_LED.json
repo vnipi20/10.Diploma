@@ -17,7 +17,7 @@
         "AOT_OPL_ECO_LED_600_4000K": [
           {
             "name": "AOT.OPL ECO LED 600 4000K",
-            "lightFlow": 3200,
+            "lightFlow": 3400,
             "power": 32,
             "lm_Wt": 106,
             "length": 640,
