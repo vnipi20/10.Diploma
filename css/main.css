@@ -1,39 +1,22 @@
 /* style popup */
-.popup {
+.popup{
     display: none;
-    position: fixed;
+    position:fixed;
     z-index: 1;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(13, 0, 48, 0.67);
+    background-color: rgba(0, 0, 0, 0.19);
 }
-
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    margin-left: auto;
-}
-
 .close:hover,
-.close:focus {
+.close:focus{
     color: black;
     cursor: pointer;
 }
-
-
-.popup-body {
+.popup-body{
     padding: 2px 16px;
 }
-
-.popup-footer {
-    padding: 2px 16px;
-    background-color: #5c82b8;
-    color: white;
-}
-
-.popup-content {
+.popup-content{
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -43,9 +26,8 @@
     animation-name: animatetop;
     animation-duration: 0.4s;
 }
-
 @keyframes animatetop {
-    from {
+    from{
         top: -300px;
         opacity: 0;
     }

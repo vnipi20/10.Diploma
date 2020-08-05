@@ -1,3 +1,24 @@
+/*--popup--*/
+let popup = document.getElementById('mypopup');
+let popupToggle = document.getElementById('myBtn');
+let popupClose = document.querySelector('.close');
+
+popupToggle.onclick = function () {
+    popup.style.display = 'block';
+};
+
+popupClose.onclick = function () {
+    popup.style.display = 'none';
+};
+
+window.onclick =function (e) {
+    if (e.target == popup) {
+        popup.style.display = 'none';
+    }
+};
+/*--popup--*/
+
+
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
 var btn3 = document.getElementById('btn3');
