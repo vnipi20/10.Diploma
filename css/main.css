@@ -77,20 +77,25 @@
 }
 
 .buttons div {
-    border: 2px solid black;
+    border: 2px solid #636363;
     border-radius: 5px;
     margin: 10px;
-    opacity: 1;
-    /*background-color: rgba(0, 225, 255, 0);*/
+    opacity: 0.9;
 }
 
 .buttons div:hover {
-    opacity: 0.8;
+    border: 2px solid black;
+    opacity: 1;
+    box-shadow: 2px 2px 5px 2px #a0a0a0;
 }
 
 .buttons img {
     width: 85px;
     height: 75px;
+    opacity: 0.9;
+}
+.buttons img:hover {
+    opacity: 1;
 }
 
 .buttons label {
@@ -105,7 +110,6 @@
 .button-name {
     height: 40px;
     border-top: 2px solid black;
-    /* background: #0598b8;*/
     text-align: center;
     padding: 5px;
 }
@@ -167,7 +171,7 @@
 #tab-btn-3:checked ~ .buttons [for="tab-btn-3"],
 #tab-btn-4:checked ~ .buttons [for="tab-btn-4"],
 #tab-btn-5:checked ~ .buttons [for="tab-btn-5"] {
-    background-color: rgba(169, 168, 192, 0.64);
+    /*  background-color: rgba(169, 168, 192, 0.64);*/
 }
 
 .border-content {
@@ -184,7 +188,11 @@
 #btn7,
 #btn8,
 #btn9,
-#btn10 {
+#btn10,
+#btn11,
+#btn12,
+#btn13,
+#btn14 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -194,14 +202,13 @@
     cursor: pointer;
 }
 
-#w1 div:nth-child(2n+1) {
-    background: silver;
+#w1 div:nth-child(2n+1),
+#w2 div:nth-child(2n+1),
+#w3 div:nth-child(2n+1),
+#w4 div:nth-child(2n+1),
+#w5 div:nth-child(2n+1) {
+    background: rgba(235, 235, 235, 0.91);
 }
-
-#w2 div:nth-child(2n+1) {
-    background: silver;
-}
-
 
 #btn1:hover,
 #btn2:hover,
@@ -212,8 +219,11 @@
 #btn7:hover,
 #btn8:hover,
 #btn9:hover,
-#btn10:hover {
-    background: #b4cae9;
+#btn10:hover,
+#btn11:hover,
+#btn12:hover,
+#btn13:hover,
+#btn14:hover {
     padding: 7px;
     border: 3px solid orangered;
 }
@@ -227,7 +237,11 @@
 #btn7:active,
 #btn8:active,
 #btn9:active,
-#btn10:active {
+#btn10:active,
+#btn11:active,
+#btn12:active,
+#btn13:active,
+#btn14:active {
     background: cornflowerblue;
 }
 
