@@ -2,10 +2,8 @@
 .b-container{
     width:200px;
     height:150px;
-    margin:0px auto;
+    margin:0 auto;
     padding:10px;
-    font-size:30px;
-    color: #fff;
 }
 .b-popup{
     width:100%;
@@ -18,7 +16,7 @@
 .b-popup .b-popup-content{
     margin:40px auto 0px auto;
     width:900px;
-    height: 600px;
+    height: 500px;
     padding:10px;
     background-color: white;
     border-radius:5px;
@@ -30,7 +28,7 @@
 /*style img lighting */
 .conteiner {
     width: 850px;
-    height: 500px;
+   /* height: 500px;*/
     margin: 10px auto;
 }
 
@@ -117,7 +115,7 @@
 }
 
 .wrap-catalog {
-    height: 210px;
+  /*  height: 210px;*/
     border: 1px solid black;
 }
 
@@ -217,7 +215,7 @@
 
 .border-content {
     width: 3px;
-    height: 395px;
+  /*  height: 395px;*/
     margin: 10px 0 0 0;
     background: #aaaaaa;
 }
@@ -238,5 +236,46 @@
 .btn-col1, .btn-col2, .btn-col5 {
     box-sizing: border-box;
 }
+.btn-catalog{
+     position: relative;
+     bottom: 60px;
+     left: 755px;
+     text-align: center;
+     width: 120px;
+     height: 40px;
+     padding: 10px;
+     color: black;
+     box-sizing: border-box;
+     border: 2px solid orangered;
+     border-radius: 3px;
+ }
 
+.btn-catalog:hover {
+    background: orangered;
+    color: white;
+}
+.btn-catalog-link{
+    text-decoration: none;
+}
+.btn-catalog-main{
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    color: black;
+    box-sizing: border-box;
+    border: 2px solid orangered;
+    border-radius: 3px;
+}
+.btn-catalog-main:hover {
+    background: orangered;
+    color: white;
+}
+/*--KKC--*/
+.kkc_catalog{
+    width: 500px;
+    height: 300px;
+    border: 1px solid orangered;
+}
+/*--KKC--*/
 /*--оформление--*/
