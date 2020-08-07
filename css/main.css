@@ -1,25 +1,27 @@
 /* style popup */
-.b-container{
-    width:200px;
-    height:150px;
-    margin:0 auto;
-    padding:10px;
+.b-container {
+    width: 200px;
+  /*  height: 150px;*/
+    margin: 0 auto;
+    padding: 10px;
 }
-.b-popup{
-    width:100%;
-    min-height:100%;
-    background-color: rgba(0,0,0,0.5);
-    overflow:hidden;
-    position:fixed;
-    top:0px;
+
+.b-popup {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
 }
-.b-popup .b-popup-content{
-    margin:40px auto 0px auto;
-    width:900px;
-    height: 500px;
-    padding:10px;
+
+.b-popup .b-popup-content {
+    margin: 40px auto 0px auto;
+    width: 900px;
+   /* height: 500px;*/
+    padding: 10px;
     background-color: white;
-    border-radius:5px;
+    border-radius: 5px;
     box-shadow: 0px 0px 10px #000;
 }
 
@@ -28,7 +30,7 @@
 /*style img lighting */
 .conteiner {
     width: 850px;
-   /* height: 500px;*/
+    /* height: 500px;*/
     margin: 10px auto;
 }
 
@@ -42,6 +44,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 280px;
+    height: 400px;
 }
 
 .buttons div {
@@ -62,6 +65,7 @@
     height: 75px;
     opacity: 0.9;
 }
+
 .buttons img:hover {
     opacity: 1;
 }
@@ -85,9 +89,14 @@
 .windows {
     flex: 1;
     margin-left: 10px;
-    height: 300px;
+   /* height: 300px;*/
+    max-height: 600px;
+    min-height:300px
 }
+.win-wrap{
 
+    border: 1px solid green;
+}
 .mod {
     position: relative;
     top: 1px;
@@ -115,7 +124,7 @@
 }
 
 .wrap-catalog {
-  /*  height: 210px;*/
+    /*  height: 210px;*/
     border: 1px solid black;
 }
 
@@ -142,7 +151,7 @@
     /*  background-color: rgba(169, 168, 192, 0.64);*/
 }
 
-.border-content {
+.sep-div {
     width: 25px;
 }
 
@@ -215,7 +224,7 @@
 
 .border-content {
     width: 3px;
-  /*  height: 395px;*/
+    /*  height: 395px;*/
     margin: 10px 0 0 0;
     background: #aaaaaa;
 }
@@ -236,28 +245,11 @@
 .btn-col1, .btn-col2, .btn-col5 {
     box-sizing: border-box;
 }
-.btn-catalog{
-     position: relative;
-     bottom: 60px;
-     left: 755px;
-     text-align: center;
-     width: 120px;
-     height: 40px;
-     padding: 10px;
-     color: black;
-     box-sizing: border-box;
-     border: 2px solid orangered;
-     border-radius: 3px;
- }
 
-.btn-catalog:hover {
-    background: orangered;
-    color: white;
-}
-.btn-catalog-link{
-    text-decoration: none;
-}
-.btn-catalog-main{
+.btn-catalog {
+    position: relative;
+    bottom: 5px;
+    left: 10px;
     text-align: center;
     width: 120px;
     height: 40px;
@@ -267,15 +259,42 @@
     border: 2px solid orangered;
     border-radius: 3px;
 }
+
+.btn-catalog:hover {
+    background: orangered;
+    color: white;
+}
+
+.btn-catalog-link {
+    text-decoration: none;
+}
+
+.btn-catalog-main {
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    color: black;
+    box-sizing: border-box;
+    border: 2px solid orangered;
+    border-radius: 3px;
+}
+
 .btn-catalog-main:hover {
     background: orangered;
     color: white;
 }
+
 /*--KKC--*/
-.kkc_catalog{
+.kkc_catalog {
     width: 500px;
     height: 300px;
+    margin: 0 auto;
     border: 1px solid orangered;
+    background: url("../img/001_PRSR_ECO_LED/001001/KKC_00101.png");
+    background-position: center;
+    background-size: cover;
 }
+
 /*--KKC--*/
 /*--оформление--*/
