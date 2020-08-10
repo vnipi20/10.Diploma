@@ -155,7 +155,8 @@ select {
     opacity: 1;
     box-shadow: 2px 2px 5px 2px #a0a0a0;
 }
-.buttons img:hover ~ .button-name{
+
+.buttons img:hover ~ .button-name {
     border-top: 2px solid orangered;
     background: orangered;
 }
@@ -383,6 +384,7 @@ select {
     border: 2px solid orangered;
     border-radius: 3px;
 }
+
 
 .btn-catalog-main:hover {
     background: orangered;
