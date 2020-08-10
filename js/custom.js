@@ -10,7 +10,6 @@ function PopUpHide(){
 }
 /*--popup--*/
 
-
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
 var btn3 = document.getElementById('btn3');
