@@ -118,8 +118,6 @@ select {
     box-shadow: 0 0 10px #000;
 }
 
-/* style popup */
-
 /*style img lighting */
 .container {
     width: 900px;
@@ -192,6 +190,18 @@ select {
     border-top: 2px solid orangered;
     background: orangered;
 }
+/* переключение class border */
+
+.buttons div.active {
+    border: 2px solid orangered;
+    opacity: 1;
+    box-shadow: 2px 2px 5px 2px #a0a0a0;
+}
+.active-name {
+    border-top: 2px solid orangered;
+    background: orangered;
+}
+/* переключение class border */
 
 .windows {
     flex: 1;
@@ -254,7 +264,7 @@ select {
 #tab-btn-3:checked ~ .buttons [for="tab-btn-3"],
 #tab-btn-4:checked ~ .buttons [for="tab-btn-4"],
 #tab-btn-5:checked ~ .buttons [for="tab-btn-5"] {
-    /*  background-color: rgba(169, 168, 192, 0.64);*/
+/*  background-color: rgba(169, 168, 192, 0.64);*/
 }
 
 .sep-div {
@@ -365,11 +375,12 @@ select {
     border: 2px solid orangered;
     border-radius: 3px;
 }*/
-.mod-btn-wrap{
+.mod-btn-wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .btn-catalog {
     position: relative;
     bottom: 0px;
@@ -410,11 +421,11 @@ select {
 }
 
 /*--KKC--*/
-.kkc_catalog {
+#kkc_catalog {
 
 }
 
-.lt001 {
+/*.lt001 {
     width: 400px;
     height: 400px;
     margin: 15px auto 0;
@@ -431,7 +442,5 @@ select {
     background-position: center;
     background-size: cover;
 
-}
+}*/
 
-/*--KKC--*/
-/*--оформление--*/
