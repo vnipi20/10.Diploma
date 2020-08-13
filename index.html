@@ -27,9 +27,9 @@
             <input type="radio" class="hidden" id="tab-btn-4" name="win">
             <input type="radio" class="hidden" id="tab-btn-5" name="win">
             <div class="buttons">
-               <div class="ww"><label for="tab-btn-1"><img src="img/001_PRSR_ECO_LED/001-img.png">
+               <div id="lt001"><label for="tab-btn-1"><img src="img/001_PRSR_ECO_LED/001-img.png">
                   <p class="button-name">PRS/R ECO LED</p></label></div>
-               <div><label for="tab-btn-2"><img src="img/002 AOT.OPL ECO LED/002-img.png">
+               <div id="lt002"><label for="tab-btn-2"><img src="img/002_AOT.OPL_ECO_LED/002-img.png">
                   <p class="button-name">AOT.OPL ECO LED</p></label></div>
                <div><label for="tab-btn-3"><img src="img/003 PTF UNI LED/003-img.png">
                   <p class="button-name">PTF UNI LED</p></label></div>
@@ -41,7 +41,12 @@
             <div class=sep-div"></div>
 
             <div class="windows">
-               <div class="mod">Модыфикация</div>
+               <div class="mod-btn-wrap">
+                  <div class="mod">Модыфикация</div>
+                  <div><a class="btn-catalog-link" href="javascript:PopUpHide()">
+                     <div class="btn-catalog">Закрыть</div>
+                  </a></div>
+               </div>
                <div class="wrap-catalog">
                   <div class="scroll">
                      <div class="btn-col1">ИС</div>
@@ -160,14 +165,14 @@
                   </div>
                </div>
 
-               <div class="kkc_catalog">
+               <div class="kkc_catalog lt001 lt002">
                   <!-- <img src="img/001 PRSR ECO LED/001001/KKC_00101.png" alt="">-->
                </div>
             </div>
          </div>
-         <a class="btn-catalog-link" href="javascript:PopUpHide()">
+      <!--   <a class="btn-catalog-link" href="javascript:PopUpHide()">
             <div class="btn-catalog">Закрыть</div>
-         </a>
+         </a>-->
       </div>
    </div>
 </div>

@@ -197,6 +197,7 @@ select {
     flex: 1;
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 10px;
     /* height: 300px;*/
     max-height: 600px;
     min-height: 300px
@@ -208,7 +209,7 @@ select {
     text-align: center;
     padding: 10px 0 10px 0;
     width: 120px;
-    height: 40px;
+    height: 50px;
     border-top: 3px solid orangered;
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -351,10 +352,27 @@ select {
     box-sizing: border-box;
 }
 
-.btn-catalog {
+/*.btn-catalog {
     position: relative;
     bottom: 5px;
     left: 730px;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    color: black;
+    box-sizing: border-box;
+    border: 2px solid orangered;
+    border-radius: 3px;
+}*/
+.mod-btn-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.btn-catalog {
+    position: relative;
+    bottom: 0px;
     text-align: center;
     width: 120px;
     height: 40px;
@@ -393,12 +411,26 @@ select {
 
 /*--KKC--*/
 .kkc_catalog {
-    width: 550px;
-    height: 300px;
+
+}
+
+.lt001 {
+    width: 400px;
+    height: 400px;
     margin: 15px auto 0;
-    background: url("../img/001_PRSR_ECO_LED/001001/KKC_00101.png");
+    background: url("../img/001_PRSR_ECO_LED/KKC_001.jpg");
     background-position: center;
     background-size: cover;
+}
+
+.lt002 {
+    width: 400px;
+    height: 400px;
+    margin: 15px auto 0;
+    background: url("../img/002_AOT.OPL_ECO_LED/KKC_002.jpg");
+    background-position: center;
+    background-size: cover;
+
 }
 
 /*--KKC--*/
