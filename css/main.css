@@ -190,6 +190,7 @@ select {
     border-top: 2px solid orangered;
     background: orangered;
 }
+
 /* переключение class border */
 
 .buttons div.active {
@@ -197,10 +198,12 @@ select {
     opacity: 1;
     box-shadow: 2px 2px 5px 2px #a0a0a0;
 }
+
 .active-name {
     border-top: 2px solid orangered;
     background: orangered;
 }
+
 /* переключение class border */
 
 .windows {
@@ -249,6 +252,14 @@ select {
     display: none;
 }
 
+.window p {
+    padding: 10px;
+}
+
+.active-name-lt {
+    border: 2px solid orangered;
+}
+
 /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
 #tab-btn-1:checked ~ .windows #w1,
 #tab-btn-2:checked ~ .windows #w2,
@@ -264,7 +275,7 @@ select {
 #tab-btn-3:checked ~ .buttons [for="tab-btn-3"],
 #tab-btn-4:checked ~ .buttons [for="tab-btn-4"],
 #tab-btn-5:checked ~ .buttons [for="tab-btn-5"] {
-/*  background-color: rgba(169, 168, 192, 0.64);*/
+    /*  background-color: rgba(169, 168, 192, 0.64);*/
 }
 
 .sep-div {
@@ -290,7 +301,6 @@ select {
     flex-wrap: wrap;
     justify-content: space-between;
     height: 40px;
-    padding: 10px;
     box-sizing: border-box;
     cursor: pointer;
 }
@@ -317,8 +327,8 @@ select {
 #btn12:hover,
 #btn13:hover,
 #btn14:hover {
-    padding: 7px;
-    border: 3px solid orangered;
+
+    border: 2px solid orangered;
 }
 
 #btn1:active,
@@ -350,16 +360,16 @@ select {
 }
 
 .btn-col3 {
-    width: 115px;
+    width: 120px;
 }
 
 .btn-col5 {
     word-wrap: break-word;
-    width: 110px;
+    width: 130px;
 }
 
-.btn-col1, .btn-col2, .btn-col5 {
-    box-sizing: border-box;
+.btn-col1, .btn-col2, .btn-col3, .btn-col4, .btn-col5 {
+
 }
 
 /*.btn-catalog {
@@ -383,20 +393,20 @@ select {
 
 .btn-catalog {
     position: relative;
-    bottom: 0px;
     text-align: center;
     width: 120px;
     height: 40px;
     padding: 10px;
-    color: black;
+    color: white;
     box-sizing: border-box;
     border: 2px solid orangered;
     border-radius: 3px;
+    background: orangered;
 }
 
 .btn-catalog:hover {
-    background: orangered;
-    color: white;
+    background: white;
+    color: black;
 }
 
 .btn-catalog-link {
@@ -408,24 +418,31 @@ select {
     width: 120px;
     height: 40px;
     padding: 10px;
-    color: black;
+    color: white;
     box-sizing: border-box;
     border: 2px solid orangered;
     border-radius: 3px;
+    background: orangered;
 }
 
 
 .btn-catalog-main:hover {
-    background: orangered;
-    color: white;
+    background: white;
+    color: black;
 }
 
 /*--KKC--*/
-#kkc_catalog {
-
+.kkc_catalog_img {
+    width: 400px;
+    height: 400px;
+    margin: 15px auto 0;
+    background: url("../img/001_PRSR_ECO_LED/KKC_001.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
-/*.lt001 {
+/*--добавление картинки ККС через js--*/
+.lt001 {
     width: 400px;
     height: 400px;
     margin: 15px auto 0;
@@ -442,5 +459,14 @@ select {
     background-position: center;
     background-size: cover;
 
-}*/
+}
 
+.lt003 {
+    width: 400px;
+    height: 400px;
+    margin: 15px auto 0;
+    background: url("../img/003_PTF_UNI_LED/KKC_003.jpg");
+    background-position: center;
+    background-size: cover;
+
+}

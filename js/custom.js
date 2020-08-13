@@ -11,14 +11,19 @@ function PopUpHide() {
     $("#popup1").hide();
 }
 
-/*--переключение class border--*/
+/*--переключение class border наименование светильников--*/
 $(".buttons div").click(function (e) {
     $(".buttons div").removeClass('active');
-    $(this).toggleClass('active');
+    $(this).addClass('active');
 });
 $(".buttons div p").click(function (e) {
     $(".buttons div p").removeClass('active-name');
-    $(this).toggleClass('active-name');
+    $(this).addClass('active-name');
+});
+/*--переключение class border тип светильников--*/
+$(".window div").click(function (e) {
+    $(".window div").removeClass('active-name-lt');
+    $(this).addClass('active-name-lt');
 });
 
 /*--добавление данные светильников с файла json при нажатии на тип светильника--*/
@@ -28,21 +33,33 @@ var btn3 = document.getElementById('btn3');
 var btn4 = document.getElementById('btn4');
 var btn5 = document.getElementById('btn5');
 var btn6 = document.getElementById('btn6');
+
 /*--добавление ККС с файла json при нажатии на наименование светильника--*/
-/*var lt001 = document.getElementById('lt001');
+var lt001 = document.getElementById('lt001');
 var lt002 = document.getElementById('lt002');
+var lt003 = document.getElementById('lt002');
 
 lt001.addEventListener('click', function () {
-    var kkc_catalog = document.getElementById('kkc_catalog');
+    var kkc_catalog = document.querySelector('.kkc_catalog');
+    kkc_catalog.classList.remove("kkc_catalog_img");
     kkc_catalog.classList.remove("lt002");
+    kkc_catalog.classList.remove("lt003");
     kkc_catalog.classList.add("lt001");
 });
-lt001.addEventListener('click', function () {
-    var kkc_catalog = document.getElementById('kkc_catalog');
+lt002.addEventListener('click', function () {
+    var kkc_catalog = document.querySelector('.kkc_catalog');
+    kkc_catalog.classList.remove("kkc_catalog_img");
     kkc_catalog.classList.remove("lt001");
+    kkc_catalog.classList.remove("lt003");
     kkc_catalog.classList.add("lt002");
-});*/
-
+});
+lt003.addEventListener('click', function () {
+    var kkc_catalog = document.querySelector('.kkc_catalog');
+    kkc_catalog.classList.remove("kkc_catalog_img");
+    kkc_catalog.classList.remove("lt001");
+    kkc_catalog.classList.remove("lt002");
+    kkc_catalog.classList.add("lt003");
+});
 
 /*--добавление данные светильников с файла json при нажатии на тип светильника--*/
 btn1.addEventListener('click', function () {
