@@ -37,13 +37,17 @@ var btn6 = document.getElementById('btn6');
 /*--добавление ККС с файла json при нажатии на наименование светильника--*/
 var lt001 = document.getElementById('lt001');
 var lt002 = document.getElementById('lt002');
-var lt003 = document.getElementById('lt002');
+var lt003 = document.getElementById('lt003');
+var lt004 = document.getElementById('lt004');
+var lt005 = document.getElementById('lt005');
 
 lt001.addEventListener('click', function () {
     var kkc_catalog = document.querySelector('.kkc_catalog');
     kkc_catalog.classList.remove("kkc_catalog_img");
     kkc_catalog.classList.remove("lt002");
     kkc_catalog.classList.remove("lt003");
+    kkc_catalog.classList.remove("lt004");
+    kkc_catalog.classList.remove("lt005");
     kkc_catalog.classList.add("lt001");
 });
 lt002.addEventListener('click', function () {
@@ -51,6 +55,8 @@ lt002.addEventListener('click', function () {
     kkc_catalog.classList.remove("kkc_catalog_img");
     kkc_catalog.classList.remove("lt001");
     kkc_catalog.classList.remove("lt003");
+    kkc_catalog.classList.remove("lt004");
+    kkc_catalog.classList.remove("lt005");
     kkc_catalog.classList.add("lt002");
 });
 lt003.addEventListener('click', function () {
@@ -58,7 +64,27 @@ lt003.addEventListener('click', function () {
     kkc_catalog.classList.remove("kkc_catalog_img");
     kkc_catalog.classList.remove("lt001");
     kkc_catalog.classList.remove("lt002");
+    kkc_catalog.classList.remove("lt004");
+    kkc_catalog.classList.remove("lt005");
     kkc_catalog.classList.add("lt003");
+});
+lt004.addEventListener('click', function () {
+    var kkc_catalog = document.querySelector('.kkc_catalog');
+    kkc_catalog.classList.remove("kkc_catalog_img");
+    kkc_catalog.classList.remove("lt001");
+    kkc_catalog.classList.remove("lt002");
+    kkc_catalog.classList.remove("lt003");
+    kkc_catalog.classList.remove("lt005");
+    kkc_catalog.classList.add("lt004");
+});
+lt005.addEventListener('click', function () {
+    var kkc_catalog = document.querySelector('.kkc_catalog');
+    kkc_catalog.classList.remove("kkc_catalog_img");
+    kkc_catalog.classList.remove("lt001");
+    kkc_catalog.classList.remove("lt002");
+    kkc_catalog.classList.remove("lt003");
+    kkc_catalog.classList.remove("lt004");
+    kkc_catalog.classList.add("lt005");
 });
 
 /*--добавление данные светильников с файла json при нажатии на тип светильника--*/

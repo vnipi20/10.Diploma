@@ -470,3 +470,21 @@ select {
     background-size: cover;
 
 }
+.lt004 {
+    width: 400px;
+    height: 400px;
+    margin: 15px auto 0;
+    background: url("../img/004_SLIM_LED/KKC_004.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+.lt005 {
+    width: 400px;
+    height: 400px;
+    margin: 15px auto 0;
+    background: url("../img/005_PTFR_UNI_LED/KKC_005.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
