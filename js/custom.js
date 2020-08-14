@@ -20,19 +20,12 @@ $(".buttons div p").click(function (e) {
     $(".buttons div p").removeClass('active-name');
     $(this).addClass('active-name');
 });
-/*--переключение class border тип светильников--*/
+/*/!*--переключение class border тип светильников--*!/
 $(".window div").click(function (e) {
     $(".window div").removeClass('active-name-lt');
     $(this).addClass('active-name-lt');
-});
+});*/
 
-/*--добавление данные светильников с файла json при нажатии на тип светильника--*/
-var btn1 = document.getElementById('btn1');
-var btn2 = document.getElementById('btn2');
-var btn3 = document.getElementById('btn3');
-var btn4 = document.getElementById('btn4');
-var btn5 = document.getElementById('btn5');
-var btn6 = document.getElementById('btn6');
 
 /*--добавление ККС с файла json при нажатии на наименование светильника--*/
 var lt001 = document.getElementById('lt001');
@@ -87,7 +80,14 @@ lt005.addEventListener('click', function () {
     kkc_catalog.classList.add("lt005");
 });
 
-/*--добавление данные светильников с файла json при нажатии на тип светильника--*/
+/*--добавление данных светильников с файла json при нажатии на тип светильника--*/
+var btn1 = document.getElementById('btn1');
+var btn2 = document.getElementById('btn2');
+var btn3 = document.getElementById('btn3');
+var btn4 = document.getElementById('btn4');
+var btn5 = document.getElementById('btn5');
+var btn6 = document.getElementById('btn6');
+
 btn1.addEventListener('click', function () {
 
     $(document).ready(function () {

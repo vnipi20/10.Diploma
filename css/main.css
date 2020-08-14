@@ -256,9 +256,9 @@ select {
     padding: 10px;
 }
 
-.active-name-lt {
+/*.active-name-lt {
     border: 2px solid orangered;
-}
+}*/
 
 /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
 #tab-btn-1:checked ~ .windows #w1,
@@ -470,6 +470,7 @@ select {
     background-size: cover;
 
 }
+
 .lt004 {
     width: 400px;
     height: 400px;
@@ -479,6 +480,7 @@ select {
     background-size: cover;
 
 }
+
 .lt005 {
     width: 400px;
     height: 400px;
