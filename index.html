@@ -61,7 +61,7 @@
    <!--основное поле расстановки светильников-->
    <div class="secCalculation">
       <div class="wrapRoom">
-         <div  id="fieldRoom">
+         <div id="fieldRoom">
 
             <div class="grid">
                <div class="grid__item"></div>
@@ -582,10 +582,27 @@
             <!--           <div class="boxField"></div>-->
          </div>
       </div>
+
+
       <div class="choiceLighting">
+         <!--включение popup выбора типа светильника-->
+         <div class="selectLighting">
+            <div id="selectLightingName">
+               Светильник AOT.OPL ECO LED 33Вт (1064000010)
+            </div>
+            <div>
+               <a class="btn-catalog-link" href="javascript:PopUpShow()">
+                  <div class="btn-catalog-main">Выбрать</div>
+               </a>
+            </div>
+         </div>
+
+         <!----включение popup выбора типа светильника---->
          <!--         <button class="clickB">добавить</button>
                   <br>-->
-         <button class="calculation btn-catalog-main">Расчет</button>
+         <div>
+            <button class="calculation btn-catalog-main">Расчет</button>
+         </div>
       </div>
       <div class="infoLightingMain">
          Параметри выбранного светилника
@@ -593,13 +610,6 @@
    </div>
 
 </div>
-<!--включение popup выбота типа светильника-->
-<div class="b-container">
-   <a class="btn-catalog-link" href="javascript:PopUpShow()">
-      <div class="btn-catalog-main">Выбрать</div>
-   </a>
-</div>
-<!----включение popup выбота типа светильника---->
 
 <!--всплывющий popup выбота типа светильника-->
 <div class="b-popup" id="popup1">

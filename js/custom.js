@@ -355,6 +355,17 @@ btn1.addEventListener('click', function () {
             $('#item-wrapper').append(posts);
         }
 
+        function updateLightingMain(date) {
+            var mainLightingName = date.map((el, item) => {
+
+                return (`
+                  <p>Светильник ${el.PRS_R_ECO_LED[2].PRS_R_ECO_LED_595[0].name}  ${el.PRS_R_ECO_LED[2].PRS_R_ECO_LED_595[0].article}</p>
+                       `)
+            });
+
+            $('#selectLightingName').append(mainLightingName);
+        }
+
     })
 });
 
