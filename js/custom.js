@@ -327,7 +327,8 @@ btn1.addEventListener('click', function () {
                 dataType: 'json',
                 success: function (resp) {
                     date = resp;
-                    updatePost(date)
+                    updatePost(date);
+                    updateLightingMain(date);
                 }
             });
             return date;
@@ -359,13 +360,16 @@ btn1.addEventListener('click', function () {
             var mainLightingName = date.map((el, item) => {
 
                 return (`
-                  <p>Светильник ${el.PRS_R_ECO_LED[2].PRS_R_ECO_LED_595[0].name}  ${el.PRS_R_ECO_LED[2].PRS_R_ECO_LED_595[0].article}</p>
+                <div id="selectLightingName">
+                   Светильник: ${el.PRS_R_ECO_LED[0].mainTypeLighting} 
+                   ${el.PRS_R_ECO_LED[2].PRS_R_ECO_LED_595[0].power}Вт 
+                    (${el.PRS_R_ECO_LED[2].PRS_R_ECO_LED_595[0].article})
+                    </div>
                        `)
             });
 
-            $('#selectLightingName').append(mainLightingName);
+            $('#selectLightingName'). replaceWith(mainLightingName);
         }
-
     })
 });
 
@@ -407,7 +411,6 @@ btn2.addEventListener('click', function () {
 
             $('#item-wrapper').append(posts);
         }
-
     })
 });
 
