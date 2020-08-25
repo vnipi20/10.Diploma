@@ -267,7 +267,8 @@ for (let button of descriptionLt) {
   });
 }
 
-/*--добавление ККС с файла json при нажатии на наименование светильника--*/
+
+/*--добавление ККС при нажатии на наименование светильника--*/
 /*--изменение кода после замечаний 1--*/
 let lampType = document.querySelectorAll('.lampType');
 /*--перебор типов светильников--*/
@@ -300,7 +301,7 @@ btn1.addEventListener('click', function () {
       let date;
 
       $.ajax({
-        url: 'PRS_R_ECO_LED.json',
+        url: 'CatalogLighting.json',
         dataType: 'json',
         success: function (resp) {
           date = resp;
@@ -339,9 +340,9 @@ btn1.addEventListener('click', function () {
 
         return (`
                 <div id="selectLightingName">
-                   Светильник: ${el.PRS_R_ECO_LED[2].PRS_R_ECO_LED_595[0].name} 
-                   ${el.PRS_R_ECO_LED[2].PRS_R_ECO_LED_595[0].power}Вт 
-                    (${el.PRS_R_ECO_LED[2].PRS_R_ECO_LED_595[0].article})
+                   Светильник: ${el.lamp001[2].type1[0].name} 
+                   ${el.lamp001[2].type1[0].power}Вт ddddd
+                    (${el.lamp001[2].type1[0].article})
                     </div>
                        `)
       });
