@@ -3,7 +3,11 @@
     "PTF_UNI_LED": [
       {
         "mainTypeLighting": "PTF UNI LED",
-        "mainNameLighting": "Светодиодные cветильники PTF"
+        "mainNameLighting": "Светодиодные cветильники PTF",
+        "link": "img/003_PTF_UNI_LED/KKC_003.jpg",
+        "installation": "Встраиваемый",
+        "diffuser": "Прозрачный",
+        "colorLight": "тепло-белый"
       },
       {
         "installation": "Крепление светильника на поверхность потолка. Так же светильник можно встраивать в подвесные потолки типа \"Армстронг\" с шириной полки несущего Т-образного профиля 15 и 24 мм.",
@@ -20,8 +24,7 @@
             "lightFlow": 3200,
             "power": 32,
             "lm_Wt": 100,
-            "length": 595,
-            "width": 595,
+            "size": "595х595мм",
             "weight": 4.5,
             "article": 1048000060
           }
@@ -32,8 +35,7 @@
             "lightFlow": 4000,
             "power": 32,
             "lm_Wt": 125,
-            "length": 591,
-            "width": 591,
+            "size": "591х591мм",
             "weight": 4.95,
             "article": 1048000070
           }

@@ -3,7 +3,11 @@
     "PRS_R_ECO_LED": [
       {
         "mainTypeLighting": "PRS/R ECO LED",
-        "mainNameLighting": "Светодиодные светильники PRS с призматическим рассеивателем"
+        "mainNameLighting": "Светодиодные светильники PRS с призматическим рассеивателем",
+        "link": "img/001_PRSR_ECO_LED/KKC_001.jpg",
+        "installation": "Встраиваемый",
+        "diffuser": "Молочный",
+        "colorLight": "тепло-белый"
       },
       {
         "installation": "Встраиваются в подвесные потолки типа Армстронг с шириной полки несущего Т-образного профиля 15 и 24 мм, в потолки GRILIATO или в подшивные потолки из гипсокартона с помощью клипс.",
@@ -20,8 +24,7 @@
             "lightFlow": 4000,
             "power": 32,
             "lm_Wt": 125,
-            "length": 595,
-            "width": 595,
+            "size": "595х595мм",
             "weight": 4.5,
             "article": 1032000100
           }
@@ -32,8 +35,7 @@
             "lightFlow": 4000,
             "power": 32,
             "lm_Wt": 125,
-            "length": 591,
-            "width": 591,
+            "size": "591х591мм",
             "weight": 3.8,
             "article": 1032000260
           }
@@ -44,8 +46,7 @@
             "lightFlow": 4000,
             "power": 35,
             "lm_Wt": 125,
-            "length": 600,
-            "width": 600,
+            "size": "600х600мм",
             "weight": 4.5,
             "article": 	1032000400
           }
@@ -56,8 +57,7 @@
             "lightFlow": 7500,
             "power": 70,
             "lm_Wt": 107,
-            "length": 595,
-            "width": 595,
+            "size": "595х595мм",
             "weight": 5.15,
             "article": 	1032000600
           }

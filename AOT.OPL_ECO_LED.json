@@ -3,7 +3,11 @@
     "AOT_OPL_ECO_LED": [
       {
         "mainTypeLighting": "AOT.OPL ECO LED",
-        "mainNameLighting": "Светодиодные светильники AOT с опаловым рассеивателем серии ECO"
+        "mainNameLighting": "Светодиодные светильники AOT с опаловым рассеивателем серии ECO",
+        "link": "img/002_AOT.OPL_ECO_LED/KKC_002.jpg",
+        "installation": "Навесной",
+        "diffuser": "Молочный",
+        "colorLight": "тепло-белый"
       },
       {
         "installation": "Крепление на поверхность потолка. Установочные элементы для крепления заказывются отдельно. Комплект крепления X4 - 2995000040.",
@@ -20,8 +24,7 @@
             "lightFlow": 3400,
             "power": 32,
             "lm_Wt": 106,
-            "length": 640,
-            "width": 640,
+            "size": "640х640мм",
             "weight": 5,
             "article": 1064000010
           }
@@ -32,8 +35,7 @@
             "lightFlow": 3400,
             "power": 32,
             "lm_Wt": 106,
-            "length": 640,
-            "width": 640,
+            "size": "640х640мм",
             "weight": 5.3,
             "article": 1064000040
           }
