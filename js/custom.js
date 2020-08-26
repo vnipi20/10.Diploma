@@ -285,7 +285,7 @@ function set_handler(i) {
     };
 }
 
-/*--добавление данных светильников с файла json при нажатии на тип светильника--*/
+/*--добавление данных светильников с файла json при нажатии на тип светильника lamp01--*/
 let lampSubtype = document.querySelectorAll('.lamp01Subtype');
 
 /*--перебор типов светильников--*/
@@ -293,7 +293,6 @@ for (let i = 0, len = lampSubtype.length; i < len; i++) {
     lampSubtype[i].addEventListener('click', function () {
 
         let atrTypeNum = lampSubtype[i].getAttribute('data-type-num');
-        console.log('123--->', atrTypeNum);
 
         $(document).ready(function () {
             let getSomeDate = function () {
@@ -359,6 +358,178 @@ for (let i = 0, len = lampSubtype.length; i < len; i++) {
                               <li>Размер: ${el.lamp01[atrTypeNum].size}</li>
                               <li>Рассеиватель: ${el.lamp01[atrTypeNum].diffuser}</li>
                               <li>Цвет источника света: ${el.lamp01[atrTypeNum].colorLight}</li>
+                              </ul>
+                              </div>
+                              <a href="http://google.com">Подробнее</a>
+                              </div>
+                           `)
+                });
+
+                $('#tabs-info-lighting').replaceWith(tabsLightingSpecifications);
+            }
+        })
+    });
+}
+
+/*--добавление данных светильников с файла json при нажатии на тип светильника lamp02--*/
+let lampSubtype02 = document.querySelectorAll('.lamp02Subtype');
+
+
+/*--перебор типов светильников--*/
+for (let i = 0, len = lampSubtype02.length; i < len; i++) {
+    lampSubtype02[i].addEventListener('click', function () {
+
+        let atrTypeNum = lampSubtype[i].getAttribute('data-type-num');
+
+        $(document).ready(function () {
+            let getSomeDate = function () {
+                let date;
+
+                $.ajax({
+                    url: 'lamp02.json',
+                    dataType: 'json',
+                    success: function (resp) {
+                        date = resp;
+                        updateLightingName(date);
+                        tabsLightingKKC(date);
+                        tabsLightingSpecifications(date);
+                    }
+                });
+                return date;
+            };
+            getSomeDate();
+
+            /*--вставляю тип и артикль на главной странице--*/
+            function updateLightingName(date) {
+                let mainLightingName = date.map((el, item) => {
+
+                    return (`
+                               <div id="selectLightingName">
+                               Светильник: ${el.lamp02[atrTypeNum].name} 
+                               ${el.lamp02[atrTypeNum].power}Вт
+                               (${el.lamp02[atrTypeNum].article})
+                               </div>
+                       `)
+                });
+
+                $('#selectLightingName').replaceWith(mainLightingName);
+            }
+
+            /*--вставляю картиинку ККС на главной странице--*/
+            function tabsLightingKKC(date) {
+                let tabsLightingKKC = date.map((el, item) => {
+                    return (`
+                               <div id="tabsLightingKKC">
+                               <img src="${el.lamp02[atrTypeNum].link}" alt="">
+                               </div>
+                       `)
+                });
+
+                $('#tabsLightingKKC').replaceWith(tabsLightingKKC);
+            }
+
+            /*--вставка фото светильника и характеристики на главной странице--*/
+            function tabsLightingSpecifications(date) {
+                let tabsLightingSpecifications = date.map((el, item) => {
+                    return (`
+                              <div class="tabs-info-lighting" id="tabs-info-lighting">
+                              <div class="tabs-info-img">
+                              <img src="img/002_AOT.OPL_ECO_LED/002-img.png" alt="">
+                              </div>
+                              <div>
+                              <ul>
+                              <li>Способ установки: ${el.lamp02[atrTypeNum].installationMin}</li>
+                              <li>Мощность: ${el.lamp02[atrTypeNum].power}Вт</li>
+                              <li>Световой поток: ${el.lamp02[atrTypeNum].lightFlow}лм  </li>
+                              <li>Размер: ${el.lamp02[atrTypeNum].size}</li>
+                              <li>Рассеиватель: ${el.lamp02[atrTypeNum].diffuser}</li>
+                              <li>Цвет источника света: ${el.lamp02[atrTypeNum].colorLight}</li>
+                              </ul>
+                              </div>
+                              <a href="http://google.com">Подробнее</a>
+                              </div>
+                           `)
+                });
+
+                $('#tabs-info-lighting').replaceWith(tabsLightingSpecifications);
+            }
+        })
+    });
+}
+
+/*--добавление данных светильников с файла json при нажатии на тип светильника lamp03--*/
+let lampSubtype03 = document.querySelectorAll('.lamp03Subtype');
+
+
+/*--перебор типов светильников--*/
+for (let i = 0, len = lampSubtype03.length; i < len; i++) {
+    lampSubtype03[i].addEventListener('click', function () {
+
+        let atrTypeNum = lampSubtype03[i].getAttribute('data-type-num');
+
+        $(document).ready(function () {
+            let getSomeDate = function () {
+                let date;
+
+                $.ajax({
+                    url: 'lamp03.json',
+                    dataType: 'json',
+                    success: function (resp) {
+                        date = resp;
+                        updateLightingName(date);
+                        tabsLightingKKC(date);
+                        tabsLightingSpecifications(date);
+                    }
+                });
+                return date;
+            };
+            getSomeDate();
+
+            /*--вставляю тип и артикль на главной странице--*/
+            function updateLightingName(date) {
+                let mainLightingName = date.map((el, item) => {
+
+                    return (`
+                               <div id="selectLightingName">
+                               Светильник: ${el.lamp03[atrTypeNum].name} 
+                               ${el.lamp03[atrTypeNum].power}Вт
+                               (${el.lamp03[atrTypeNum].article})
+                               </div>
+                       `)
+                });
+
+                $('#selectLightingName').replaceWith(mainLightingName);
+            }
+
+            /*--вставляю картиинку ККС на главной странице--*/
+            function tabsLightingKKC(date) {
+                let tabsLightingKKC = date.map((el, item) => {
+                    return (`
+                               <div id="tabsLightingKKC">
+                               <img src="${el.lamp03[atrTypeNum].link}" alt="">
+                               </div>
+                       `)
+                });
+
+                $('#tabsLightingKKC').replaceWith(tabsLightingKKC);
+            }
+
+            /*--вставка фото светильника и характеристики на главной странице--*/
+            function tabsLightingSpecifications(date) {
+                let tabsLightingSpecifications = date.map((el, item) => {
+                    return (`
+                              <div class="tabs-info-lighting" id="tabs-info-lighting">
+                              <div class="tabs-info-img">
+                              <img src="img/003_PTF_UNI_LED/003-img.png" alt="">
+                              </div>
+                              <div>
+                              <ul>
+                              <li>Способ установки: ${el.lamp03[atrTypeNum].installationMin}</li>
+                              <li>Мощность: ${el.lamp03[atrTypeNum].power}Вт</li>
+                              <li>Световой поток: ${el.lamp03[atrTypeNum].lightFlow}лм  </li>
+                              <li>Размер: ${el.lamp03[atrTypeNum].size}</li>
+                              <li>Рассеиватель: ${el.lamp03[atrTypeNum].diffuser}</li>
+                              <li>Цвет источника света: ${el.lamp03[atrTypeNum].colorLight}</li>
                               </ul>
                               </div>
                               <a href="http://google.com">Подробнее</a>
