@@ -204,6 +204,21 @@ roomWidth.oninput = function () {
 };
 /*----range ширина и длина помещения----*/
 
+/*--управление select увеличение списка настроек--*/
+var elements = document.querySelectorAll(".item-btn");
+for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("click", toggleOpenText);
+}
+
+function toggleOpenText() {
+    var item = this.getAttribute('data-item');
+    var text = document.querySelector(".item_text");
+    console.log('111----> ', item);
+    console.log('222----> ', text);
+    text.classList.toggle("showText");
+}
+/*----управление select увеличение списка настроек----*/
+
 /*--функция изменения текущего размера помещения--*/
 let divBox = document.getElementById('fieldRoom');
 

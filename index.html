@@ -1,815 +1,829 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>10.Diploma rev01</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="fonts/fonts.css">
+   <meta charset="UTF-8">
+   <title>10.Diploma rev01</title>
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="fonts/fonts.css">
 
 </head>
 <body>
 <div class="container">
-  <!--панель выбора параметров-->
-  <div class="secParam">
-    <div>
-      <div class="rangeWrap">
-        <p>Длина помещения:</p><span id="roomLengthValue"></span> м
-      </div>
-      <input class="roomLength decorRange" type="range" id="roomLength" min="4" max="20" value="20" step="1"/>
-
-      <div class="rangeWrap">
-        <p>Ширина помещения:</p><span id="roomWidthValue"></span> м
-      </div>
-      <input class="roomWidth decorRange" type="range" id="roomWidth" min="4" max="10" value="10" step="1"/>
-
-      <div class="rangeWrap">
-        <p>Высота потолка:</p><span id="heightValue"></span> м
-      </div>
-      <input class="decorRange" type="range" id="rangeHeight" min="0" max="3" value="2" step="0.2"/>
-
-      <div class="rangeWrap">
-        <p>Коэф. отражения потолка:</p><span id="reflectionCeilingValue"></span>
-      </div>
-      <input class="decorRange" type="range" id="kReflectionCeiling" min="0" max="0.9" value="0.3" step="0.1"/>
-
-
-      <div class="rangeWrap">
-        <p>Коэф. отражения стен:</p><span id="reflectionWallsValue"></span>
-      </div>
-      <input class="decorRange" type="range" id="kReflectionWalls" min="0" max="0.9" value="0.7" step="0.1"/>
-
-
-      <div class="rangeWrap">
-        <p>Коэф. отражения пола:</p><span id="reflectionFloorValue"></span>
-      </div>
-      <input class="decorRange" type="range" id="kReflectionFloor" min="0" max="0.9" value="0.2" step="0.1"/>
-
-
-      <div class="rangeWrap">
-        <p>Высота расчетной плоскости:</p><span id="heightPlaneValue"></span> м
-      </div>
-      <input class="decorRange" type="range" id="heightPlane" min="0.2" max="1" value="0.8" step="0.1"/>
-
-
-      <div class="rangeWrap">
-        <p>Коэф. запаса:</p><span id="reserveValue"></span>
-      </div>
-      <input class="decorRange" type="range" id="kReserve" min="1" max="2" value="1.25" step="0.1"/>
-    </div>
-  </div>
-  <!--основное поле расстановки светильников-->
-  <div class="secCalculation">
-    <div class="wrapRoom">
-      <div id="fieldRoom">
-
-        <div class="grid">
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-          <div class="grid__item"></div>
-
-        </div>
-
-        <!--           <div class="boxField"></div>-->
-      </div>
-    </div>
-
-
-    <div class="choiceLighting">
-      <!--включение popup выбора типа светильника-->
-      <div class="selectLighting">
-        <div id="selectLightingName">
-          Светильник: PRS/R ECO LED 32Вт (1032000100)
-        </div>
-        <div>
-          <div id="btn-catalog-main">Выбрать</div>
-        </div>
-      </div>
+   <!--панель выбора параметров-->
+   <div class="secParam">
       <div>
-        <button class="calculation-js btn-catalog-main">Расчет</button>
+         <div class="rangeWrap">
+            <p>Длина помещения:</p><span id="roomLengthValue"></span> м
+         </div>
+         <input class="roomLength decorRange" type="range" id="roomLength" min="4" max="20" value="20" step="1"/>
+
+         <div class="rangeWrap">
+            <p>Ширина помещения:</p><span id="roomWidthValue"></span> м
+         </div>
+         <input class="roomWidth decorRange" type="range" id="roomWidth" min="4" max="10" value="10" step="1"/>
+
+         <div class="rangeWrap">
+            <p>Высота потолка:</p><span id="heightValue"></span> м
+         </div>
+         <input class="decorRange" type="range" id="rangeHeight" min="0" max="3" value="2" step="0.2"/>
+
+         <select class="decorSelect">
+            <option>75лк</option>
+            <option>150лк</option>
+            <option>300лк</option>
+            <option>500лк</option>
+            <option>700лк</option>
+         </select>
+
+         <div class="item-btn" data-item="item_1">
+            Больше настроек
+         </div>
+
+         <div class="item_text">
+            <div class="rangeWrap">
+               <p>Коэф. отражения потолка:</p><span id="reflectionCeilingValue"></span>
+            </div>
+            <input class="decorRange" type="range" id="kReflectionCeiling" min="0" max="0.9" value="0.3" step="0.1"/>
+
+
+            <div class="rangeWrap">
+               <p>Коэф. отражения стен:</p><span id="reflectionWallsValue"></span>
+            </div>
+            <input class="decorRange" type="range" id="kReflectionWalls" min="0" max="0.9" value="0.7" step="0.1"/>
+
+
+            <div class="rangeWrap">
+               <p>Коэф. отражения пола:</p><span id="reflectionFloorValue"></span>
+            </div>
+            <input class="decorRange" type="range" id="kReflectionFloor" min="0" max="0.9" value="0.2" step="0.1"/>
+
+
+            <div class="rangeWrap">
+               <p>Высота расчетной плоскости:</p><span id="heightPlaneValue"></span> м
+            </div>
+            <input class="decorRange" type="range" id="heightPlane" min="0.2" max="1" value="0.8" step="0.1"/>
+
+
+            <div class="rangeWrap">
+               <p>Коэф. запаса:</p><span id="reserveValue"></span>
+            </div>
+            <input class="decorRange" type="range" id="kReserve" min="1" max="2" value="1.25" step="0.1"/>
+         </div>
       </div>
-    </div>
-    <div class="infoLightingMain">
-      <div class="tabs-container">
-        <ul class="tabs">
-          <li class="active">
-            <p>Характеристики</p>
-          </li>
-          <li>
-            <p>Кривая ККС</p>
-          </li>
-        </ul>
-        <div class="tabs-content">          <div class="tabs-panel active" data-index="0">
-            <div class="tabs-info-lighting" id="tabs-info-lighting">
-              <div class="tabs-info-img">
-                <img src="img/001_PRSR_ECO_LED/001-img.png" alt="">
-              </div>
-              <div>
-                <ul>
-                  <li>Способ установки: Встраиваемый</li>
-                  <li>Мощность: 35Вт</li>
-                  <li>Световой поток: 4000лм  </li>
-                  <li>Размер: 595х595мм</li>
-                  <li>Рассеиватель: Молочный</li>
-                  <li>Цвет источника света: тепло-белый</li>
-                </ul>
-              </div>
-              <a href="#">Подробнее</a>
+   </div>
+   <!--основное поле расстановки светильников-->
+   <div class="secCalculation">
+      <div class="wrapRoom">
+         <div id="fieldRoom">
+
+            <div class="grid">
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+               <div class="grid__item"></div>
+
             </div>
 
-          </div>
-          <div class="tabs-panel" data-index="1">
-            <div id="tabsLightingKKC">
-              <img src="img/001_PRSR_ECO_LED/KKC_001.jpg" alt="">
-            </div>
-          </div>
-        </div>
+            <!--           <div class="boxField"></div>-->
+         </div>
       </div>
-    </div>
-  </div>
+
+      <!--включение popup выбора типа светильника-->
+      <div class="choiceLighting">
+         <div class="selectLighting">
+            <div id="selectLightingName">
+               Светильник: PRS/R ECO LED 32Вт (1032000100)
+            </div>
+            <div>
+               <div id="btn-catalog-main">Выбрать</div>
+            </div>
+         </div>
+         <div>
+            <button class="calculation-js btn-catalog-main">Расчет</button>
+         </div>
+      </div>
+      <div class="infoLightingMain">
+         <div class="tabs-container">
+            <ul class="tabs">
+               <li class="active">
+                  <p>Характеристики</p>
+               </li>
+               <li>
+                  <p>Кривая ККС</p>
+               </li>
+            </ul>
+            <div class="tabs-content">
+               <div class="tabs-panel active" data-index="0">
+                  <div class="tabs-info-lighting" id="tabs-info-lighting">
+                     <div class="tabs-info-img">
+                        <img src="img/001_PRSR_ECO_LED/001-img.png" alt="">
+                     </div>
+                     <div>
+                        <ul>
+                           <li>Способ установки: Встраиваемый</li>
+                           <li>Мощность: 35Вт</li>
+                           <li>Световой поток: 4000лм</li>
+                           <li>Размер: 595х595мм</li>
+                           <li>Рассеиватель: Молочный</li>
+                           <li>Цвет источника света: тепло-белый</li>
+                        </ul>
+                     </div>
+                     <a href="#">Подробнее</a>
+                  </div>
+
+               </div>
+               <div class="tabs-panel" data-index="1">
+                  <div id="tabsLightingKKC">
+                     <img src="img/001_PRSR_ECO_LED/KKC_001.jpg" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
 </div>
 
 
 <!--всплывющий popup выбота типа светильника-->
 <div class="b-popup" id="popup1">
-  <div class="b-popup-content">
+   <div class="b-popup-content">
 
-    <div class="containerCatalogLt">
-      <div class="wrapper">
-        <input type="radio" class="hidden" id="tab-btn-1" name="win" checked>
-        <input type="radio" class="hidden" id="tab-btn-2" name="win">
-        <input type="radio" class="hidden" id="tab-btn-3" name="win">
-        <input type="radio" class="hidden" id="tab-btn-4" name="win">
-        <input type="radio" class="hidden" id="tab-btn-5" name="win">
-        <div class="buttons">
-          <div id="lt001" class="lampType active" data-style="lt001">
-            <label for="tab-btn-1">
-              <img src="img/001_PRSR_ECO_LED/001-img.png">
-              <p class="button-name active-name">PRS/R ECO LED</p></label>
-          </div>
-          <div id="lt002" class="lampType" data-style="lt002">
-            <label for="tab-btn-2">
-              <img src="img/002_AOT.OPL_ECO_LED/002-img.png">
-              <p class="button-name">AOT.OPL ECO LED</p></label>
-          </div>
-          <div id="lt003" class="lampType" data-style="lt003">
-            <label for="tab-btn-3">
-              <img src="img/003_PTF_UNI_LED/003-img.png">
-              <p class="button-name">PTF UNI LED
-              <p></label>
-          </div>
-          <div id="lt004" class="lampType" data-style="lt004">
-            <label for="tab-btn-4">
-              <img src="img/004_SLIM_LED/004-img.png">
-              <p class="button-name">SLIM LED</p></label>
-          </div>
-          <div id="lt005" class="lampType" data-style="lt005">
-            <label for="tab-btn-5">
-              <img src="img/005_PTFR_UNI_LED/005-img.png">
-              <p class="button-name">PTF/R UNI LED</p></label>
-          </div>
-        </div>
-        <div class=sep-div"></div>
+      <div class="containerCatalogLt">
+         <div class="wrapper">
+            <input type="radio" class="hidden" id="tab-btn-1" name="win" checked>
+            <input type="radio" class="hidden" id="tab-btn-2" name="win">
+            <input type="radio" class="hidden" id="tab-btn-3" name="win">
+            <input type="radio" class="hidden" id="tab-btn-4" name="win">
+            <input type="radio" class="hidden" id="tab-btn-5" name="win">
+            <div class="buttons">
+               <div id="lt001" class="lampType active" data-style="lt001">
+                  <label for="tab-btn-1">
+                     <img src="img/001_PRSR_ECO_LED/001-img.png">
+                     <p class="button-name active-name">PRS/R ECO LED</p></label>
+               </div>
+               <div id="lt002" class="lampType" data-style="lt002">
+                  <label for="tab-btn-2">
+                     <img src="img/002_AOT.OPL_ECO_LED/002-img.png">
+                     <p class="button-name">AOT.OPL ECO LED</p></label>
+               </div>
+               <div id="lt003" class="lampType" data-style="lt003">
+                  <label for="tab-btn-3">
+                     <img src="img/003_PTF_UNI_LED/003-img.png">
+                     <p class="button-name">PTF UNI LED
+                     <p></label>
+               </div>
+               <div id="lt004" class="lampType" data-style="lt004">
+                  <label for="tab-btn-4">
+                     <img src="img/004_SLIM_LED/004-img.png">
+                     <p class="button-name">SLIM LED</p></label>
+               </div>
+               <div id="lt005" class="lampType" data-style="lt005">
+                  <label for="tab-btn-5">
+                     <img src="img/005_PTFR_UNI_LED/005-img.png">
+                     <p class="button-name">PTF/R UNI LED</p></label>
+               </div>
+            </div>
+            <div class=sep-div"></div>
 
-        <div class="windows">
-          <div class="mod-btn-wrap">
-            <div class="mod">Модыфикация</div>
-            <div>
-              <div class="btn-catalog">Закрыть</div>
+            <div class="windows">
+               <div class="mod-btn-wrap">
+                  <div class="mod">Модыфикация</div>
+                  <div>
+                     <div class="btn-catalog">Закрыть</div>
+                  </div>
+               </div>
+               <div class="wrap-catalog">
+                  <div class="description">
+                     <div class="btn-col1">ИС</div>
+                     <div class="btn-col2">Мощность</div>
+                     <div class="btn-col3">Световой поток</div>
+                     <div class="btn-col4">Тип КСС</div>
+                     <div class="btn-col5">Габариты</div>
+                  </div>
+                  <div class="window" id="w1">
+                     <div id="btn1" class="lamp01Subtype active-name-lt" data-type-num="0">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">4000лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">595х595х85мм</p>
+                     </div>
+                     <div id="btn2" class="lamp01Subtype" data-type-num="1">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">4000лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">595х595х84мм</p>
+                     </div>
+                     <div id="btn3" class="lamp01Subtype" data-type-num="2">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">35Вт</p>
+                        <p class="btn-col3">4000лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">600х600х85мм</p>
+                     </div>
+                     <div id="btn4" class="lamp01Subtype" data-type-num="3">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">70Вт</p>
+                        <p class="btn-col3">7500лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">600х600х115мм</p>
+                     </div>
+                  </div>
+                  <div class="window" id="w2">
+                     <div id="btn5" class="lamp02Subtype" data-type-num="0">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">3400лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">640х640х75мм</p>
+                     </div>
+                     <div id="btn6" class="lamp02Subtype" data-type-num="1">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">3400лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">640х640х85мм</p>
+                     </div>
+                  </div>
+                  <div class="window" id="w3">
+                     <div id="btn7" class="lamp03Subtype" data-type-num="0">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">3200лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">595х595х58мм</p>
+                     </div>
+                     <div id="btn8" class="lamp03Subtype" data-type-num="1">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">4000лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">591х591х58мм</p>
+                     </div>
+                  </div>
+                  <div class="window" id="w4">
+                     <div id="btn9" class="lamp04Subtype" data-type-num="0">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">3600лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">595х595х11мм</p>
+                     </div>
+                     <div id="btn10" class="lamp04Subtype" data-type-num="1">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">4000лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">591х591х11мм</p>
+                     </div>
+                     <div id="btn11" class="lamp04Subtype" data-type-num="2">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">40Вт</p>
+                        <p class="btn-col3">4000лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">595х595х11мм</p>
+                     </div>
+                     <div id="btn12" class="lamp04Subtype" data-type-num="3">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">40Вт</p>
+                        <p class="btn-col3">4000лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">595х595х11мм</p>
+                     </div>
+                  </div>
+                  <div class="window" id="w5">
+                     <div id="btn13" class="lamp05Subtype" data-type-num="0">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">3200лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">595х595х58мм</p>
+                     </div>
+                     <div id="btn14" class="lamp05Subtype" data-type-num="1">
+                        <p class="btn-col1">LED</p>
+                        <p class="btn-col2">32Вт</p>
+                        <p class="btn-col3">4000лк</p>
+                        <p class="btn-col4">K</p>
+                        <p class="btn-col5">591х591х58мм</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="kkc_catalog kkc_catalog_img">
+               </div>
             </div>
-          </div>
-          <div class="wrap-catalog">
-            <div class="description">
-              <div class="btn-col1">ИС</div>
-              <div class="btn-col2">Мощность</div>
-              <div class="btn-col3">Световой поток</div>
-              <div class="btn-col4">Тип КСС</div>
-              <div class="btn-col5">Габариты</div>
-            </div>
-            <div class="window" id="w1">
-              <div id="btn1" class="lamp01Subtype active-name-lt" data-type-num="0">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">4000лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">595х595х85мм</p>
-              </div>
-              <div id="btn2" class="lamp01Subtype" data-type-num="1">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">4000лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">595х595х84мм</p>
-              </div>
-              <div id="btn3" class="lamp01Subtype" data-type-num="2">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">35Вт</p>
-                <p class="btn-col3">4000лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">600х600х85мм</p>
-              </div>
-              <div id="btn4" class="lamp01Subtype" data-type-num="3">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">70Вт</p>
-                <p class="btn-col3">7500лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">600х600х115мм</p>
-              </div>
-            </div>
-            <div class="window" id="w2">
-              <div id="btn5" class="lamp02Subtype" data-type-num="0">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">3400лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">640х640х75мм</p>
-              </div>
-              <div id="btn6" class="lamp02Subtype" data-type-num="1">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">3400лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">640х640х85мм</p>
-              </div>
-            </div>
-            <div class="window" id="w3">
-              <div id="btn7" class="lamp03Subtype" data-type-num="0">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">3200лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">595х595х58мм</p>
-              </div>
-              <div id="btn8" class="lamp03Subtype" data-type-num="1">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">4000лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">591х591х58мм</p>
-              </div>
-            </div>
-            <div class="window" id="w4">
-              <div id="btn9" class="lamp04Subtype" data-type-num="0">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">3600лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">595х595х11мм</p>
-              </div>
-              <div id="btn10" class="lamp04Subtype" data-type-num="1">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">4000лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">591х591х11мм</p>
-              </div>
-              <div id="btn11" class="lamp04Subtype" data-type-num="2">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">40Вт</p>
-                <p class="btn-col3">4000лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">595х595х11мм</p>
-              </div>
-              <div id="btn12" class="lamp04Subtype" data-type-num="3">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">40Вт</p>
-                <p class="btn-col3">4000лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">595х595х11мм</p>
-              </div>
-            </div>
-            <div class="window" id="w5">
-              <div id="btn13" class="lamp05Subtype" data-type-num="0">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">3200лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">595х595х58мм</p>
-              </div>
-              <div id="btn14" class="lamp05Subtype" data-type-num="1">
-                <p class="btn-col1">LED</p>
-                <p class="btn-col2">32Вт</p>
-                <p class="btn-col3">4000лк</p>
-                <p class="btn-col4">K</p>
-                <p class="btn-col5">591х591х58мм</p>
-              </div>
-            </div>
-          </div>
-          <div class="kkc_catalog kkc_catalog_img">
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-  </div>
+   </div>
 </div>
 <!----всплывющий popup выбота типа светильника---->
 
