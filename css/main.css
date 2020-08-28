@@ -81,6 +81,12 @@ body {
     color: #1A1A1A;
 }
 
+.textBolt {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 15px;
+}
+
 /*body {
     margin: 100px 20%;
     font-family: "Roboto";
@@ -98,6 +104,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: start;
     max-width: 1100px;
     margin: 10px auto;
 }
@@ -164,7 +171,7 @@ body {
     left: -12px;
     width: 24px;
     height: 24px;
-    background: orangered;
+    background: #FF4518;
     z-index: 1200;
 
 }
@@ -233,12 +240,12 @@ body {
     width: 10px;
     height: 26px;
     border-radius: 3px;
-    background: orangered;
+    background: #FF4518;
     cursor: pointer;
 }
 
 .decorRange::-webkit-slider-thumb:hover {
-    box-shadow: 0 0 4px 0 orangered;
+    box-shadow: 0 0 4px 0 #FF4518;
 }
 
 /*----оформление range----*/
@@ -250,14 +257,16 @@ body {
     width: 100%;
     height: 25px;
     text-align: center;
+    font-size: 15px;
     border: 1px solid #4c4c4c;
     border-radius: 3px;
 }
-option:hover
-{
+
+option:hover {
     background: orange;
     color: #fff;
 }
+
 .decorSelect:focus {
     outline: none;
 }
@@ -265,9 +274,9 @@ option:hover
 .item-btn {
     text-align: center;
     cursor: pointer;
-    color: orangered;
+    color: #FF4518;
     font-size: 14px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -278,24 +287,51 @@ option:hover
 .item-btn:hover {
     color: #a0a0a0;
     font-size: 14px;
- }
+}
+
 .item-btn:active {
-    font-size: 15px;
+    color: black;
 }
 
 .item_text {
     flex-basis: 100%;
     overflow: hidden;
-    height: 0px;
+    height: 0;
     line-height: 1.4;
     margin-bottom: 15px;
-    transition: all 0.5s;
 }
 
 .item_text.showText {
     overflow: inherit;
     height: auto;
-    transition: all 2s;
+}
+
+.hideSettingsBtn {
+    display: none;
+}
+
+.showSettingsBtn {
+    display: initial;
+    text-align: center;
+    cursor: pointer;
+    color: #FF4518;
+    font-size: 14px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.showSettingsBtn:hover {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.showSettingsBtn:active {
+    font-size: 15px;
 }
 
 
@@ -400,14 +436,14 @@ option:hover
 }
 
 .buttons div:hover {
-    border: 2px solid orangered;
+    border: 2px solid #FF4518;
     opacity: 1;
     box-shadow: 2px 2px 5px 2px #a0a0a0;
 }
 
 .buttons img:hover ~ .button-name {
-    border-top: 2px solid orangered;
-    background: orangered;
+    border-top: 2px solid #FF4518;
+    background: #FF4518;
 }
 
 .buttons img {
@@ -438,21 +474,21 @@ option:hover
 }
 
 .button-name:hover {
-    border-top: 2px solid orangered;
-    background: orangered;
+    border-top: 2px solid #FF4518;
+    background: #FF4518;
 }
 
 /* переключение class border */
 
 .buttons div.active {
-    border: 2px solid orangered;
+    border: 2px solid #FF4518;
     opacity: 1;
     box-shadow: 2px 2px 5px 2px #a0a0a0;
 }
 
 .active-name {
-    border-top: 2px solid orangered;
-    background: orangered;
+    border-top: 2px solid #FF4518;
+    background: #FF4518;
 }
 
 /* переключение class border */
@@ -474,7 +510,7 @@ option:hover
     padding: 10px 0 10px 0;
     width: 120px;
     height: 50px;
-    border-top: 3px solid orangered;
+    border-top: 3px solid #FF4518;
     border-left: 1px solid #a0a0a0;
     border-right: 1px solid #a0a0a0;
     border-bottom: 1px solid #a0a0a0;
@@ -518,7 +554,7 @@ option:hover
 }
 
 .active-name-lt {
-    border: 2px solid orangered;
+    border: 2px solid #FF4518;
 }
 
 /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
@@ -589,7 +625,7 @@ option:hover
 #btn13:hover,
 #btn14:hover {
 
-    border: 2px solid orangered;
+    border: 2px solid #FF4518;
 }
 
 #btn1:active,
@@ -647,9 +683,9 @@ option:hover
     padding: 5px;
     color: white;
     box-sizing: border-box;
-    border: 2px solid orangered;
+    border: 2px solid #FF4518;
     border-radius: 3px;
-    background: orangered;
+    background: #FF4518;
     cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -678,9 +714,9 @@ option:hover
     padding: 5px;
     color: white;
     box-sizing: border-box;
-    border: 2px solid orangered;
+    border: 2px solid #FF4518;
     border-radius: 3px;
-    background: orangered;
+    background: #FF4518;
     cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -701,9 +737,9 @@ option:hover
     padding: 5px;
     color: white;
     box-sizing: border-box;
-    border: 2px solid orangered;
+    border: 2px solid #FF4518;
     border-radius: 3px;
-    background: orangered;
+    background: #FF4518;
     cursor: pointer;
     margin: 0 5px;
     -webkit-touch-callout: none;
@@ -716,7 +752,7 @@ option:hover
 .btn-catalog-main:hover {
     background: white;
     color: black;
-    border: 2px solid orangered;
+    border: 2px solid #FF4518;
 }
 
 .btn-catalog-main:focus {
@@ -832,7 +868,7 @@ p {
     opacity: 1;
     padding: 8px 0 12px 0;
     z-index: 20;
-    border-top: 3px solid orangered;
+    border-top: 3px solid #FF4518;
     border-left: 1px solid #9f9f9f;
     border-right: 1px solid #9f9f9f;
     border-bottom: 1px solid #9f9f9f;
@@ -842,7 +878,6 @@ p {
 .tabs-content {
     position: relative;
     z-index: 2;
-    padding: 25px;
     border: 1px solid #9f9f9f;
     background: white;
 }
@@ -869,7 +904,7 @@ p {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 30px 30px 5px 30px;
 }
 
 .tabs-info-img {
@@ -881,11 +916,59 @@ p {
 }
 
 .tabs-info-lighting a {
-    color: orangered;
+    color: #FF4518;
     font-size: 14px;
 }
 
 .tabs-info-lighting a:hover {
     color: #a0a0a0;
     font-size: 14px;
+}
+
+.more-btn {
+    text-align: center;
+    cursor: pointer;
+    color: #FF4518;
+    font-size: 14px;
+    margin-bottom: 20px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.more-btn:hover {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.more-btn:active {
+    color: black;
+}
+
+/*--оформление полного описания светилька--*/
+.more-description-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #9f9f9f;
+    padding: 25px;
+}
+
+.more-description-wrap p {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.slider {
+    margin: 0 auto;
+    width: 700px;
+    height: 500px;
+}
+
+.slider img {
+    margin: 0 auto;
+    vertical-align: middle;
+
 }

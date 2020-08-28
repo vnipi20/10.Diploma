@@ -5,6 +5,8 @@
    <title>10.Diploma rev01</title>
    <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="fonts/fonts.css">
+   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
 </head>
 <body>
@@ -12,6 +14,7 @@
    <!--панель выбора параметров-->
    <div class="secParam">
       <div>
+         <p class="textBolt">Характеристики помещения:</p>
          <div class="rangeWrap">
             <p>Длина помещения:</p><span id="roomLengthValue"></span> м
          </div>
@@ -35,11 +38,15 @@
             <option>700лк</option>
          </select>
 
-         <div class="item-btn" data-item="item_1">
+         <div class="item-btn item-btn-set">
             Больше настроек
          </div>
+         <!--         <div class="item-btn hideSettingsBtn">
+                     Меньше настроек
+                  </div>-->
 
          <div class="item_text">
+            <p class="textBolt">Дополнительный настройки:</p>
             <div class="rangeWrap">
                <p>Коэф. отражения потолка:</p><span id="reflectionCeilingValue"></span>
             </div>
@@ -636,9 +643,17 @@
                            <li>Цвет источника света: тепло-белый</li>
                         </ul>
                      </div>
-                     <a href="#">Подробнее</a>
+                     <p class="more-btn">Подробнее</p>
                   </div>
+                  <div class="more-description-wrap">
+                     <p>PRS/R ECO LED 32Вт 4000лм</p>
+                     <div class="slider sliсkSlider">
+                        <img src="img/001_PRSR_ECO_LED/size_012.png" alt="">
+                        <img src="img/001_PRSR_ECO_LED/size_011.png" alt="">
+                        <img src="img/001_PRSR_ECO_LED/001-img.png" alt="">
+                     </div>
 
+                  </div>
                </div>
                <div class="tabs-panel" data-index="1">
                   <div id="tabsLightingKKC">
@@ -710,28 +725,28 @@
                      <div class="btn-col5">Габариты</div>
                   </div>
                   <div class="window" id="w1">
-                     <div id="btn1" class="lamp01Subtype active-name-lt" data-type-num="0">
+                     <div id="btn1" class="lampSubtype active-name-lt" data-type-num="0">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">4000лк</p>
                         <p class="btn-col4">K</p>
                         <p class="btn-col5">595х595х85мм</p>
                      </div>
-                     <div id="btn2" class="lamp01Subtype" data-type-num="1">
+                     <div id="btn2" class="lampSubtype" data-type-num="1">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">4000лк</p>
                         <p class="btn-col4">K</p>
                         <p class="btn-col5">595х595х84мм</p>
                      </div>
-                     <div id="btn3" class="lamp01Subtype" data-type-num="2">
+                     <div id="btn3" class="lampSubtype" data-type-num="2">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">35Вт</p>
                         <p class="btn-col3">4000лк</p>
                         <p class="btn-col4">K</p>
                         <p class="btn-col5">600х600х85мм</p>
                      </div>
-                     <div id="btn4" class="lamp01Subtype" data-type-num="3">
+                     <div id="btn4" class="lampSubtype" data-type-num="3">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">70Вт</p>
                         <p class="btn-col3">7500лк</p>
@@ -740,14 +755,14 @@
                      </div>
                   </div>
                   <div class="window" id="w2">
-                     <div id="btn5" class="lamp02Subtype" data-type-num="0">
+                     <div id="btn5" class="lampSubtype" data-type-num="4">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">3400лк</p>
                         <p class="btn-col4">K</p>
                         <p class="btn-col5">640х640х75мм</p>
                      </div>
-                     <div id="btn6" class="lamp02Subtype" data-type-num="1">
+                     <div id="btn6" class="lampSubtype" data-type-num="5">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">3400лк</p>
@@ -756,14 +771,14 @@
                      </div>
                   </div>
                   <div class="window" id="w3">
-                     <div id="btn7" class="lamp03Subtype" data-type-num="0">
+                     <div id="btn7" class="lampSubtype" data-type-num="6">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">3200лк</p>
                         <p class="btn-col4">K</p>
                         <p class="btn-col5">595х595х58мм</p>
                      </div>
-                     <div id="btn8" class="lamp03Subtype" data-type-num="1">
+                     <div id="btn8" class="lampSubtype" data-type-num="7">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">4000лк</p>
@@ -772,28 +787,28 @@
                      </div>
                   </div>
                   <div class="window" id="w4">
-                     <div id="btn9" class="lamp04Subtype" data-type-num="0">
+                     <div id="btn9" class="lampSubtype" data-type-num="8">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">3600лк</p>
                         <p class="btn-col4">K</p>
                         <p class="btn-col5">595х595х11мм</p>
                      </div>
-                     <div id="btn10" class="lamp04Subtype" data-type-num="1">
+                     <div id="btn10" class="lampSubtype" data-type-num="9">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">4000лк</p>
                         <p class="btn-col4">K</p>
                         <p class="btn-col5">591х591х11мм</p>
                      </div>
-                     <div id="btn11" class="lamp04Subtype" data-type-num="2">
+                     <div id="btn11" class="lampSubtype" data-type-num="10">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">40Вт</p>
                         <p class="btn-col3">4000лк</p>
                         <p class="btn-col4">K</p>
                         <p class="btn-col5">595х595х11мм</p>
                      </div>
-                     <div id="btn12" class="lamp04Subtype" data-type-num="3">
+                     <div id="btn12" class="lampSubtype" data-type-num="11">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">40Вт</p>
                         <p class="btn-col3">4000лк</p>
@@ -802,14 +817,14 @@
                      </div>
                   </div>
                   <div class="window" id="w5">
-                     <div id="btn13" class="lamp05Subtype" data-type-num="0">
+                     <div id="btn13" class="lampSubtype" data-type-num="12">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">3200лк</p>
                         <p class="btn-col4">K</p>
                         <p class="btn-col5">595х595х58мм</p>
                      </div>
-                     <div id="btn14" class="lamp05Subtype" data-type-num="1">
+                     <div id="btn14" class="lampSubtype" data-type-num="13">
                         <p class="btn-col1">LED</p>
                         <p class="btn-col2">32Вт</p>
                         <p class="btn-col3">4000лк</p>
@@ -832,6 +847,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/custom.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
 
 </body>
 </html>
