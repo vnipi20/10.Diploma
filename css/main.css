@@ -972,3 +972,52 @@ p {
     vertical-align: middle;
 
 }
+.tabs-description {
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tabs-description li {
+    display: block;
+    position: relative;
+    border-radius: 2px 2px 0 0;
+    background: #EDEDED;
+    margin-right: 5px;
+    opacity: 0.7;
+    transition: all 0.1s ease-in-out;
+    top: 1px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    width: 150px;
+    height: 50px;
+    border-top: 1px solid #9f9f9f;
+    border-left: 1px solid #9f9f9f;
+    border-right: 1px solid #9f9f9f;
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tabs-description li.activeDec,
+.tabs-description li:hover {
+    opacity: 1;
+    padding: 8px 0 12px 0;
+    z-index: 20;
+    border-top: 3px solid #FF4518;
+    border-left: 1px solid #9f9f9f;
+    border-right: 1px solid #9f9f9f;
+    border-bottom: 1px solid #9f9f9f;
+    border-bottom-color: white;
+}
+.tabs-panel-description.activeDec {
+    display: block;
+}
+
+.tabs-panel-description p + div {
+    margin-top: 10px;
+}

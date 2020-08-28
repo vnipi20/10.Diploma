@@ -409,7 +409,7 @@ for (let el of tabLinks) {
     });
 }
 
-/*--полные характеристики светильника--*/
+/*/!*--полные характеристики светильника--*!/
 for (let i = 0, len = lampSubtype.length; i < len; i++) {
     lampSubtype[i].addEventListener('click', function () {
 
@@ -431,7 +431,7 @@ for (let i = 0, len = lampSubtype.length; i < len; i++) {
             };
             getSomeDate();
 
-            /*--вставляю тип и артикль на главной странице--*/
+            /!*--вставляю тип и артикль на главной странице--*!/
             function moreDescription(date) {
                 let moreDescription = date.map((el, item) => {
                     return (`
@@ -448,10 +448,29 @@ for (let i = 0, len = lampSubtype.length; i < len; i++) {
 
         })
     });
+}*/
+/*--tabs выбора полных характеристик светильника--*/
+const tabDescription = document.querySelectorAll(".tabs-description p");
+const tabPanelsDescription = document.querySelectorAll(".tabs-panel-description");
+
+for (let el of tabDescription) {
+    el.addEventListener("click", e => {
+        e.preventDefault();
+
+        document.querySelector(".tabs-description li.activeDec").classList.remove("activeDec");
+        document.querySelector(".tabs-panel-description.activeDec").classList.remove("activeDec");
+
+        const parentListItem = el.parentElement;
+        parentListItem.classList.add("activeDec");
+        const index = [...parentListItem.parentElement.children].indexOf(parentListItem);
+
+        const panel = [...tabPanelsDescription].filter(el => el.getAttribute("data-index") == index);
+        panel[0].classList.add("activeDec");
+    });
 }
 
-/*--слайдк=ер фото светильника--*/
 
+/*--слайдер фото светильника--*/
 $(document).ready(function(){
 $('.sliсkSlider').slick({
     dots: true,
@@ -487,5 +506,5 @@ $('.sliсkSlider').slick({
     ]
 });
 });
-/*----слайдк=ер фото светильника----*/
+/*----слайдер фото светильника----*/
 
