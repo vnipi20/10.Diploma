@@ -17,19 +17,19 @@ let grid = document.querySelector(".grid");
 let gridItemBlock = [];
 let boxField = gridItemBlock;
 grid.addEventListener("click", function (event) {
-    let gridItems = this.children;
-    for (let i = 0; i < gridItems.length; i++) {
-        let gridItem = gridItems[i];
-        let rect = gridItem.getBoundingClientRect();
-        let elementDetected = event.clientX >= rect.left
-            && event.clientX <= rect.right
-            && event.clientY >= rect.top
-            && event.clientY <= rect.bottom;
-        if (elementDetected) {
-            console.log(gridItem);
-            return gridItemBlock.push(gridItem);
-        }
+  let gridItems = this.children;
+  for (let i = 0; i < gridItems.length; i++) {
+    let gridItem = gridItems[i];
+    let rect = gridItem.getBoundingClientRect();
+    let elementDetected = event.clientX >= rect.left
+      && event.clientX <= rect.right
+      && event.clientY >= rect.top
+      && event.clientY <= rect.bottom;
+    if (elementDetected) {
+      console.log(gridItem);
+      return gridItemBlock.push(gridItem);
     }
+  }
 
 });
 console.log('===>', gridItemBlock);
@@ -38,8 +38,8 @@ console.log('===>', gridItemBlock);
 
 /* add lamps in the room*/
 grid.addEventListener('click', function () {
-    let div = document.createElement('div');
-    div.innerHTML = `<div class="lightingWrap">
+  let div = document.createElement('div');
+  div.innerHTML = `<div class="lightingWrap">
                      <div class="boxFront"></div>
                      <div class="box"></div>
                      <div class="box"></div>
@@ -49,89 +49,89 @@ grid.addEventListener('click', function () {
                      <div class="box"></div>
                      <div class="box"></div>
                    </div>`;
-    boxField[0].append(div);
-    console.log('*****>', div);
+  boxField[0].append(div);
+  console.log('*****>', div);
 });
 /* add lamps in the room*/
 
 calculation[0].addEventListener('click', function () {
 
-    let getRangeHeight = heightValue.textContent; /* get let value inpute range height */
-    let getReflectionCeiling = reflectionCeilingValue.textContent; /* get let
+  let getRangeHeight = heightValue.textContent; /* get let value inpute range height */
+  let getReflectionCeiling = reflectionCeilingValue.textContent; /* get let
      value inpute range celing */
-    let getReflectionWalls = reflectionWallsValue.textContent; /* get let
+  let getReflectionWalls = reflectionWallsValue.textContent; /* get let
      value inpute range walls */
-    let getReflectionFloor = reflectionFloorValue.textContent; /* get let
+  let getReflectionFloor = reflectionFloorValue.textContent; /* get let
      value inpute range floor */
-    let getHeightPlane = heightPlaneValue.textContent; /* get let
+  let getHeightPlane = heightPlaneValue.textContent; /* get let
      value inpute range plane */
-    let getReserve = reserveValue.textContent; /* get let
+  let getReserve = reserveValue.textContent; /* get let
      value inpute range reserve */
 
-    let kN = +getReflectionCeiling + +getReflectionWalls + +getReflectionFloor + +getHeightPlane + +getReserve;
-    let k1 = 1.2 / +getRangeHeight * 2 * kN;
-    let k2 = 1.5 / +getRangeHeight * 2 * kN;
-    let k3 = 1.8 / +getRangeHeight * 2 * kN;
-    let k4 = 2.1 / +getRangeHeight * 2 * kN;
-    let k5 = 2.4 / +getRangeHeight * 2 * kN;
-    let k6 = 2.7 / +getRangeHeight * 2 * kN;
-    let k7 = 3 / +getRangeHeight * 2 * kN, styleBoxFrontBc, styleBoxFrontBr;
+  let kN = +getReflectionCeiling + +getReflectionWalls + +getReflectionFloor + +getHeightPlane + +getReserve;
+  let k1 = 1.2 / +getRangeHeight * 2 * kN;
+  let k2 = 1.5 / +getRangeHeight * 2 * kN;
+  let k3 = 1.8 / +getRangeHeight * 2 * kN;
+  let k4 = 2.1 / +getRangeHeight * 2 * kN;
+  let k5 = 2.4 / +getRangeHeight * 2 * kN;
+  let k6 = 2.7 / +getRangeHeight * 2 * kN;
+  let k7 = 3 / +getRangeHeight * 2 * kN, styleBoxFrontBc, styleBoxFrontBr;
 
-    console.log('--->', getRangeHeight);
-    console.log('--->', k2);
+  console.log('--->', getRangeHeight);
+  console.log('--->', k2);
 
-    styleBoxFrontBc = boxFront[0].style;
-    styleBoxFrontBc.backgroundColor = "orangered";
-    styleBoxFrontBr = boxFront[0].style;
-    styleBoxFrontBr.border = "1px solid #000638";
+  styleBoxFrontBc = boxFront[0].style;
+  styleBoxFrontBc.backgroundColor = "orangered";
+  styleBoxFrontBr = boxFront[0].style;
+  styleBoxFrontBr.border = "1px solid #000638";
 
-    let boxShadow100 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k1 + 'px' + ' ' + stretchBS * k1 + 'px' + ' ' + colorBS[0];
-    let boxShadow200 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k2 + 'px' + ' ' + stretchBS * k2 + 'px' + ' ' + colorBS[1];
-    let boxShadow300 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k3 + 'px' + ' ' + stretchBS * k3 + 'px' + ' ' + colorBS[2];
-    let boxShadow400 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k4 + 'px' + ' ' + stretchBS * k4 + 'px' + ' ' + colorBS[3];
-    let boxShadow500 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k5 + 'px' + ' ' + stretchBS * k5 + 'px' + ' ' + colorBS[4];
-    let boxShadow600 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k6 + 'px' + ' ' + stretchBS * k6 + 'px' + ' ' + colorBS[5];
-    let boxShadow700 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k7 + 'px' + ' ' + stretchBS * k7 + 'px' + ' ' + colorBS[6];
+  let boxShadow100 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k1 + 'px' + ' ' + stretchBS * k1 + 'px' + ' ' + colorBS[0];
+  let boxShadow200 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k2 + 'px' + ' ' + stretchBS * k2 + 'px' + ' ' + colorBS[1];
+  let boxShadow300 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k3 + 'px' + ' ' + stretchBS * k3 + 'px' + ' ' + colorBS[2];
+  let boxShadow400 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k4 + 'px' + ' ' + stretchBS * k4 + 'px' + ' ' + colorBS[3];
+  let boxShadow500 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k5 + 'px' + ' ' + stretchBS * k5 + 'px' + ' ' + colorBS[4];
+  let boxShadow600 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k6 + 'px' + ' ' + stretchBS * k6 + 'px' + ' ' + colorBS[5];
+  let boxShadow700 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k7 + 'px' + ' ' + stretchBS * k7 + 'px' + ' ' + colorBS[6];
 
-    newStyle = box[0].style;
-    newStyle.zIndex = 1000;
-    newStyle.boxShadow = boxShadow100;
+  newStyle = box[0].style;
+  newStyle.zIndex = 1000;
+  newStyle.boxShadow = boxShadow100;
 
-    newStyle2 = box[1].style;
-    newStyle2.zIndex = 800;
-    newStyle2.boxShadow = boxShadow200;
+  newStyle2 = box[1].style;
+  newStyle2.zIndex = 800;
+  newStyle2.boxShadow = boxShadow200;
 
-    newStyle3 = box[2].style;
-    newStyle3.zIndex = 600;
-    newStyle3.boxShadow = boxShadow300;
+  newStyle3 = box[2].style;
+  newStyle3.zIndex = 600;
+  newStyle3.boxShadow = boxShadow300;
 
-    newStyle4 = box[3].style;
-    newStyle4.zIndex = 500;
-    newStyle4.boxShadow = boxShadow400;
+  newStyle4 = box[3].style;
+  newStyle4.zIndex = 500;
+  newStyle4.boxShadow = boxShadow400;
 
-    newStyle5 = box[4].style;
-    newStyle5.zIndex = 400;
-    newStyle5.boxShadow = boxShadow500;
+  newStyle5 = box[4].style;
+  newStyle5.zIndex = 400;
+  newStyle5.boxShadow = boxShadow500;
 
-    newStyle6 = box[5].style;
-    newStyle6.zIndex = 300;
-    newStyle6.boxShadow = boxShadow600;
+  newStyle6 = box[5].style;
+  newStyle6.zIndex = 300;
+  newStyle6.boxShadow = boxShadow600;
 
-    newStyle7 = box[6].style;
-    newStyle7.zIndex = 200;
-    newStyle7.boxShadow = boxShadow700;
+  newStyle7 = box[6].style;
+  newStyle7.zIndex = 200;
+  newStyle7.boxShadow = boxShadow700;
 
-    /* addStyleField = wrapRoom.style;
-     addStyleField.backgroundColor = "green";*/
+  /* addStyleField = wrapRoom.style;
+   addStyleField.backgroundColor = "green";*/
 
-    for (let i = 0; i < wrapRoom.length; i++) { // проходим циклом по всем элементам объекта
-        wrapRoom[i].style.backgroundColor = "#000638"; // устанавливаем красный цвет текста каждому элементу
-        console.log('wrapRoom', wrapRoom[i]);
-    }
-    console.log('wrapRoom', wrapRoom);
+  for (let i = 0; i < wrapRoom.length; i++) { // проходим циклом по всем элементам объекта
+    wrapRoom[i].style.backgroundColor = "#000638"; // устанавливаем красный цвет текста каждому элементу
+    console.log('wrapRoom', wrapRoom[i]);
+  }
+  console.log('wrapRoom', wrapRoom);
 
-    addfieldRoom = fieldRoom.style;
-    addfieldRoom.backgroundColor = "#000638";
+  addfieldRoom = fieldRoom.style;
+  addfieldRoom.backgroundColor = "#000638";
 
 });
 
@@ -163,27 +163,27 @@ reserveValue.innerHTML = kReserve.value;
 /*--letiable input range-- */
 /*--- function value input range height --- */
 rangeHeight.oninput = function () {
-    heightValue.innerHTML = 2 + +rangeHeight.value;
+  heightValue.innerHTML = 2 + +rangeHeight.value;
 };
 /*--- function value input range K celling --- */
 kReflectionCeiling.oninput = function () {
-    reflectionCeilingValue.innerHTML = +kReflectionCeiling.value;
+  reflectionCeilingValue.innerHTML = +kReflectionCeiling.value;
 };
 /*--- function value input range K walls --- */
 kReflectionWalls.oninput = function () {
-    reflectionWallsValue.innerHTML = +kReflectionWalls.value;
+  reflectionWallsValue.innerHTML = +kReflectionWalls.value;
 };
 /*--- function value input range K floor --- */
 kReflectionFloor.oninput = function () {
-    reflectionFloorValue.innerHTML = +kReflectionFloor.value;
+  reflectionFloorValue.innerHTML = +kReflectionFloor.value;
 };
 /*--- function value input range K plane --- */
 heightPlane.oninput = function () {
-    heightPlaneValue.innerHTML = +heightPlane.value;
+  heightPlaneValue.innerHTML = +heightPlane.value;
 };
 /*--function value input range reserve-- */
 kReserve.oninput = function () {
-    reserveValue.innerHTML = +kReserve.value;
+  reserveValue.innerHTML = +kReserve.value;
 };
 /* ----value input range height---- */
 
@@ -193,18 +193,18 @@ let roomLengthValue = document.getElementById("roomLengthValue");
 roomLengthValue.innerHTML = roomLength.value;
 
 roomLength.oninput = function () {
-    roomLengthValue.innerHTML = +roomLength.value;
+  roomLengthValue.innerHTML = +roomLength.value;
 };
 
 let roomWidth = document.getElementById("roomWidth");
 let roomWidthValue = document.getElementById("roomWidthValue");
 roomWidthValue.innerHTML = roomWidth.value;
 roomWidth.oninput = function () {
-    roomWidthValue.innerHTML = +roomWidth.value;
+  roomWidthValue.innerHTML = +roomWidth.value;
 };
 /*----range ширина и длина помещения----*/
 
-/*--управление select увеличение списка настроек--*/
+/*/!*--управление select увеличение списка настроек--*!/
 var elements = document.querySelectorAll(".item-btn");
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("click", toggleOpenText);
@@ -213,26 +213,26 @@ for (var i = 0; i < elements.length; i++) {
 function toggleOpenText() {
     var text = document.querySelector(".item_text");
     var textHide = document.querySelector(".item-btn-set");
-/*    var text2 = document.querySelector(".hideSettingsBtn");*/
+/!*    var text2 = document.querySelector(".hideSettingsBtn");*!/
     text.classList.toggle("showText");
     textHide.classList.toggle("hideSettingsBtn");
-/*    text2.classList.remove("hideSettingsBtn");
-    text2.classList.toggle("showSettingsBtn");*/
+/!*    text2.classList.remove("hideSettingsBtn");
+    text2.classList.toggle("showSettingsBtn");*!/
 }
-/*----управление select увеличение списка настроек----*/
+/!*----управление select увеличение списка настроек----*!/*/
 
 /*--функция изменения текущего размера помещения--*/
 let divBox = document.getElementById('fieldRoom');
 
 roomLength.addEventListener('click', function () {
-    let getRoomLengthValue = roomLengthValue.textContent * 40;
+  let getRoomLengthValue = roomLengthValue.textContent * 40;
 
-    divBox.style.width = getRoomLengthValue + 'px';
+  divBox.style.width = getRoomLengthValue + 'px';
 });
 roomWidth.addEventListener('click', function () {
-    let getRoomWidthValue = roomWidthValue.textContent * 40;
+  let getRoomWidthValue = roomWidthValue.textContent * 40;
 
-    divBox.style.height = getRoomWidthValue + 'px';
+  divBox.style.height = getRoomWidthValue + 'px';
 });
 /*----функция изменения текущего размера помещения----*/
 
@@ -243,45 +243,45 @@ let btnPopup = document.getElementById("btn-catalog-main");
 let close = document.getElementsByClassName("btn-catalog")[0];
 
 btnPopup.onclick = function () {
-    popup1.style.display = "block";
+  popup1.style.display = "block";
 };
 
 close.onclick = function () {
-    popup1.style.display = "none";
+  popup1.style.display = "none";
 };
 
 window.onclick = function (event) {
-    if (event.target == popup1) {
-        popup1.style.display = "none";
-    }
+  if (event.target == popup1) {
+    popup1.style.display = "none";
+  }
 };
 
 /*--переключение class border наименование светильников--*/
 let btnLt = document.querySelectorAll(".buttons div");
 
 for (let btn of btnLt) {
-    btn.addEventListener('click', function () {
-        btnLt.forEach(i => i.classList.remove('active'));
-        this.classList.toggle('active');
-    });
+  btn.addEventListener('click', function () {
+    btnLt.forEach(i => i.classList.remove('active'));
+    this.classList.toggle('active');
+  });
 }
 /*--переключение подсветки имени светильника-- ПОКА НЕ РАБОТАЕТ НОРМАЛЬНО--*/
 let btnLtName = document.querySelectorAll(".buttons div p");
 
 for (let btn01 of btnLtName) {
-    btn01.addEventListener('click', function () {
-        btnLtName.forEach(i => i.classList.remove('active-name'));
-        this.classList.toggle('active-name');
-    });
+  btn01.addEventListener('click', function () {
+    btnLtName.forEach(i => i.classList.remove('active-name'));
+    this.classList.toggle('active-name');
+  });
 }
 /*--переключение class border описания светильников--*/
 let descriptionLt = document.querySelectorAll(".window div");
 
 for (let button of descriptionLt) {
-    button.addEventListener('click', function () {
-        descriptionLt.forEach(i => i.classList.remove('active-name-lt'));
-        this.classList.toggle('active-name-lt');
-    });
+  button.addEventListener('click', function () {
+    descriptionLt.forEach(i => i.classList.remove('active-name-lt'));
+    this.classList.toggle('active-name-lt');
+  });
 }
 
 
@@ -289,104 +289,240 @@ for (let button of descriptionLt) {
 let lampType = document.querySelectorAll('.lampType');
 /*--перебор типов светильников--*/
 for (let i = 0, len = lampType.length; i < len; i++) {
-    lampType[i].addEventListener('click', set_handler(i), false);
+  lampType[i].addEventListener('click', set_handler(i), false);
 }
 
 /*--удаление и добавления классов--*/
 function set_handler(i) {
-    return function (e) {
-        let atrLamp = lampType[i].getAttribute('data-style');
-        let kkc_catalog = document.querySelector('.kkc_catalog');
-        kkc_catalog.classList.remove('kkc_catalog_img', 'lt001', 'lt002', 'lt003', 'lt004', 'lt005');
-        kkc_catalog.classList.add(atrLamp);
-    };
+  return function (e) {
+    let atrLamp = lampType[i].getAttribute('data-style');
+    let kkc_catalog = document.querySelector('.kkc_catalog');
+    kkc_catalog.classList.remove('kkc_catalog_img', 'lt001', 'lt002', 'lt003', 'lt004', 'lt005');
+    kkc_catalog.classList.add(atrLamp);
+  };
 }
 
 /*--добавление данных светильников с файла json при нажатии на тип светильника lamp01--*/
 let lampSubtype = document.querySelectorAll('.lampSubtype');
 
+/*--опции слайдера slick Slider записаные в переменную, она вызывается ниже с задержкой--*/
+var options = {
+  dots: true,
+  infinite: true,
+  speed: 300,
+  loop: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
+
 /*--перебор типов светильников--*/
 for (let i = 0, len = lampSubtype.length; i < len; i++) {
-    lampSubtype[i].addEventListener('click', function () {
+  lampSubtype[i].addEventListener('click', function () {
 
-        let atrTypeNum = lampSubtype[i].getAttribute('data-type-num');
+    let atrTypeNum = lampSubtype[i].getAttribute('data-type-num');
 
-        $(document).ready(function () {
-            let getSomeDate = function () {
-                let date;
+    $(document).ready(function () {
+      let getSomeDate = function () {
+        let date;
 
-                $.ajax({
-                    url: 'lamp.json',
-                    dataType: 'json',
-                    success: function (resp) {
-                        date = resp;
-                        updateLightingName(date);
-                        tabsLightingKKC(date);
-                        tabsLightingSpecifications(date);
-                    }
-                });
-                return date;
-            };
-            getSomeDate();
+        $.ajax({
+          url: 'lamp.json',
+          dataType: 'json',
+          success: function (resp) {
 
-            /*--вставляю тип и артикль на главной странице--*/
-            function updateLightingName(date) {
-                let mainLightingName = date.map((el, item) => {
-                    return (`
+            /*--задержка инициалицазии slickSlider после запуска ajax--*/
+            setTimeout(function () {
+              $(".sliсkSlider").slick(options)
+            }, 500);
+            /*----задержка инициалицазии slickSlider после запуска ajax----*/
+
+            date = resp;
+            updateLightingName(date);
+            tabsLightingKKC(date);
+            tabsLightingSpecifications(date);
+            mainDiscriptionSlider(date);
+            mainDiscription(date);
+            mainSpecifications(date);
+            mainDownloadInstructions(date);
+          }
+        });
+        return date;
+      };
+      getSomeDate();
+
+      /*--вставляю тип и артикль на главной странице--*/
+      function updateLightingName(date) {
+        let mainLightingName = date.map((el, item) => {
+          return (`
                                <div id="selectLightingName">
                                Светильник: ${el.lamp[atrTypeNum].name} 
                                ${el.lamp[atrTypeNum].power}Вт
                                (${el.lamp[atrTypeNum].article})
                                </div>
                        `)
-                });
+        });
 
-                $('#selectLightingName').replaceWith(mainLightingName);
-            }
+        $('#selectLightingName').replaceWith(mainLightingName);
+      }
 
-            /*--вставляю картиинку ККС на главной странице--*/
-            function tabsLightingKKC(date) {
-                let tabsLightingKKC = date.map((el, item) => {
-                    return (`
+      /*--вставляю картиинку ККС на главной странице--*/
+      function tabsLightingKKC(date) {
+        let tabsLightingKKC = date.map((el, item) => {
+          return (`
                                <div id="tabsLightingKKC">
                                <img src="${el.lamp[atrTypeNum].link}" alt="">
                                </div>
                        `)
-                });
+        });
 
-                $('#tabsLightingKKC').replaceWith(tabsLightingKKC);
-            }
+        $('#tabsLightingKKC').replaceWith(tabsLightingKKC);
+      }
 
-            /*--вставка фото светильника и характеристики на главной странице--*/
-            function tabsLightingSpecifications(date) {
-                let tabsLightingSpecifications = date.map((el, item) => {
-                    console.log('654684684--->', el.lamp[atrTypeNum].installationMin);
-                    return (`
-                              <div class="tabs-info-lighting" id="tabs-info-lighting">
-                              <div class="tabs-info-img">
-                              <img src="${el.lamp[atrTypeNum].linkImg}" alt="">
-                              </div>
-                              <div>
-                              <ul>
-                              <li>Способ установки: ${el.lamp[atrTypeNum].installationMin}</li>
-                              <li>Мощность: ${el.lamp[atrTypeNum].power}Вт</li>
-                              <li>Световой поток: ${el.lamp[atrTypeNum].lightFlow}лм  </li>
-                              <li>Размер: ${el.lamp[atrTypeNum].size}</li>
-                              <li>Рассеиватель: ${el.lamp[atrTypeNum].diffuser}</li>
-                              <li>Цвет источника света: ${el.lamp[atrTypeNum].colorLight}</li>
-                              </ul>
-                              </div>
-                              <p class="more-btn">Подробнее</p>
-                              </div>
-                           `)
-                });
+      /*--вставка фото светильника и характеристики на главной странице--*/
+      function tabsLightingSpecifications(date) {
+        let tabsLightingSpecifications = date.map((el, item) => {
+          return (`
+                    <div class="tabs-info-lighting" id="tabs-info-lighting">
+                    <div class="tabs-info-img">
+                    <img src="${el.lamp[atrTypeNum].linkImg001}" alt="">
+                    </div>
+                    <div>
+                    <ul>
+                    <li>Способ установки: ${el.lamp[atrTypeNum].installationMin}</li>
+                    <li>Мощность: ${el.lamp[atrTypeNum].power}Вт</li>
+                    <li>Световой поток: ${el.lamp[atrTypeNum].lightFlow}лм  </li>
+                    <li>Размер: ${el.lamp[atrTypeNum].size}</li>
+                    <li>Рассеиватель: ${el.lamp[atrTypeNum].diffuser}</li>
+                    <li>Цвет источника света: ${el.lamp[atrTypeNum].colorLight}</li>
+                    </ul>
+                    </div>
+                    </div>
+                  `)
+        });
 
-                $('#tabs-info-lighting').replaceWith(tabsLightingSpecifications);
-            }
-        })
-    });
+        $('#tabs-info-lighting').replaceWith(tabsLightingSpecifications);
+      }
+
+
+      /*--главные характеристики светильника--название и слайдер--*/
+      function mainDiscriptionSlider(date) {
+        let mainDiscriptionSlider = date.map((el, item) => {
+          return (`
+                   <div class="more-description-wrap">
+                   <p>${el.lamp[atrTypeNum].name}  ${el.lamp[atrTypeNum].power}Вт ${el.lamp[atrTypeNum].lightFlow}лм</p>
+                   <div class="slider sliсkSlider" id="alickAdd">
+                   <img src="${el.lamp[atrTypeNum].linkImg001}" alt="">
+                   <img src="${el.lamp[atrTypeNum].linkImg002}" alt="">
+                   <img src="${el.lamp[atrTypeNum].linkImg003}" alt="">
+                   </div>
+                   </div>
+                 `)
+        });
+
+        $('.more-description-wrap').replaceWith(mainDiscriptionSlider);
+      }
+
+      /*--главные характеристики светильника--описание--*/
+      function mainDiscription(date) {
+        let mainDiscription = date.map((el, item) => {
+          return (`
+                  <div class="column-1">
+                  <div>
+                    <h4>Установка:</h4>
+                    <p>${el.lamp[atrTypeNum].installationMax}</p>
+                  </div>
+                  <div>
+                    <h4>Конструкция:</h4>
+                    <p>${el.lamp[atrTypeNum].design}</p>
+                  </div>
+                  <div>
+                    <h4>Оптическая часть:</h4>
+                    <p>${el.lamp[atrTypeNum].opticalPart}</p>
+                  </div>
+                  <div>
+                    <h4>Комплектация:</h4>
+                    <p>${el.lamp[atrTypeNum].equipment}</p>
+                  </div>
+                  <div>
+                    <h4>Области использования:</h4>
+                    <p>${el.lamp[atrTypeNum].areasUse}</p>
+                  </div>
+                </div>
+                 `)
+        });
+
+        $('.column-1').replaceWith(mainDiscription);
+      }
+
+
+      /*--главные характеристики светильника--характеристики--*/
+      function mainSpecifications(date) {
+        let mainSpecifications = date.map((el, item) => {
+          return (`
+                  <div class="column-2-wrap">
+                    <div>Артикул:</div>
+                    <div>${el.lamp[atrTypeNum].article}</div>
+                    <div>Тип ИС:</div>
+                    <div>${el.lamp[atrTypeNum].lampType}</div>
+                    <div>Световой поток:</div>
+                    <div>${el.lamp[atrTypeNum].lightFlow}лм</div>
+                    <div>Мощность светильника:</div>
+                    <div>${el.lamp[atrTypeNum].power}Вт</div>
+                    <div>Энергоэффективность:</div>
+                    <div>${el.lamp[atrTypeNum].lm_Wt}лм/Вт</div>
+                    <div>Цветовая температура:</div>
+                    <div>${el.lamp[atrTypeNum].temperature}</div>
+                    <div>Напряжение питания:</div>
+                    <div>${el.lamp[atrTypeNum].voltage}</div>
+                    <div>Степень защиты (IP):</div>
+                    <div>${el.lamp[atrTypeNum].IP}</div>
+                    <div>Вес:</div>
+                    <div>${el.lamp[atrTypeNum].weight}</div>
+                    <div>Габариты АхВхС:</div>
+                    <div>${el.lamp[atrTypeNum].size}</div>
+                    <div id="pic">
+                      <img src="img/pic/pic-1.png" alt="" title="Класс защиты I от поражением электрическим током">
+                      <img src="img/pic/pic-2.png" alt="" title="Степень защиты IP">
+                      <img src="img/pic/pic-3.png" alt="" title="Ударопрочность Дж">
+                      <img src="img/pic/pic-4.png" alt="" title="Климатическая зона">
+                      <img src="img/pic/pic-5.png" alt="" title="Может работать от переменного и постоянного тока ">
+                      <img src="img/pic/pic-6.png" alt="" title="Класс энергоеффективности">
+                    </div>
+                  </div>
+                 `)
+        });
+
+        $('.column-2-wrap').replaceWith(mainSpecifications);
+      }
+
+      /*--главные характеристики светильника--скачать документацию--*/
+      function mainDownloadInstructions(date) {
+        let mainDownloadInstructions = date.map((el, item) => {
+          return (`
+                 <div class="download-wrap">
+                  <div>
+                    <p>Описание</p>
+                    <a href="${el.lamp[atrTypeNum].linkDescription}" download=""><img src="img/pdf.png" alt=""></a>
+                  </div>
+                  <div>
+                    <p>Паспорт</p>
+                    <a href="${el.lamp[atrTypeNum].linkPas}" download=""><img src="img/pdf.png" alt=""></a>
+                  </div>
+                  <div>
+                    <p>Этикетка</p>
+                    <a href="${el.lamp[atrTypeNum].linkEner}" download=""><img src="img/pdf.png" alt=""></a>
+                  </div>
+                </div>
+                 `)
+        });
+
+        $('.download-wrap').replaceWith(mainDownloadInstructions);
+      }
+
+    })
+  });
 }
-
 
 
 /*--tabs выбранного светильника с переключением кривой ККС и характеристиками--*/
@@ -394,117 +530,252 @@ const tabLinks = document.querySelectorAll(".tabs p");
 const tabPanels = document.querySelectorAll(".tabs-panel");
 
 for (let el of tabLinks) {
-    el.addEventListener("click", e => {
-        e.preventDefault();
+  el.addEventListener("click", e => {
+    e.preventDefault();
 
-        document.querySelector(".tabs li.active").classList.remove("active");
-        document.querySelector(".tabs-panel.active").classList.remove("active");
+    document.querySelector(".tabs li.active").classList.remove("active");
+    document.querySelector(".tabs-panel.active").classList.remove("active");
 
-        const parentListItem = el.parentElement;
-        parentListItem.classList.add("active");
-        const index = [...parentListItem.parentElement.children].indexOf(parentListItem);
+    const parentListItem = el.parentElement;
+    parentListItem.classList.add("active");
+    const index = [...parentListItem.parentElement.children].indexOf(parentListItem);
 
-        const panel = [...tabPanels].filter(el => el.getAttribute("data-index") == index);
-        panel[0].classList.add("active");
-    });
+    const panel = [...tabPanels].filter(el => el.getAttribute("data-index") == index);
+    panel[0].classList.add("active");
+  });
 }
 
-/*/!*--полные характеристики светильника--*!/
-for (let i = 0, len = lampSubtype.length; i < len; i++) {
-    lampSubtype[i].addEventListener('click', function () {
-
-        let atrTypeNum = lampSubtype[i].getAttribute('data-type-num');
-
-        $(document).ready(function () {
-            let getSomeDate = function () {
-                let date;
-
-                $.ajax({
-                    url: 'lamp.json',
-                    dataType: 'json',
-                    success: function (resp) {
-                        date = resp;
-                        moreDescription(date);
-                    }
-                });
-                return date;
-            };
-            getSomeDate();
-
-            /!*--вставляю тип и артикль на главной странице--*!/
-            function moreDescription(date) {
-                let moreDescription = date.map((el, item) => {
-                    return (`
-                               <div id="selectLightingName">
-                               Светильник: ${el.lamp[atrTypeNum].name} 
-                               ${el.lamp[atrTypeNum].power}Вт
-                               (${el.lamp[atrTypeNum].article})
-                               </div>
-                       `)
-                });
-
-                $('#selectLightingName').replaceWith(moreDescription);
-            }
-
-        })
-    });
-}*/
 /*--tabs выбора полных характеристик светильника--*/
 const tabDescription = document.querySelectorAll(".tabs-description p");
 const tabPanelsDescription = document.querySelectorAll(".tabs-panel-description");
 
 for (let el of tabDescription) {
-    el.addEventListener("click", e => {
-        e.preventDefault();
+  el.addEventListener("click", e => {
+    e.preventDefault();
 
-        document.querySelector(".tabs-description li.activeDec").classList.remove("activeDec");
-        document.querySelector(".tabs-panel-description.activeDec").classList.remove("activeDec");
+    document.querySelector(".tabs-description li.active").classList.remove("active");
+    document.querySelector(".tabs-panel-description.active").classList.remove("active");
 
-        const parentListItem = el.parentElement;
-        parentListItem.classList.add("activeDec");
-        const index = [...parentListItem.parentElement.children].indexOf(parentListItem);
+    const parentListItem = el.parentElement;
+    parentListItem.classList.add("active");
+    const index = [...parentListItem.parentElement.children].indexOf(parentListItem);
 
-        const panel = [...tabPanelsDescription].filter(el => el.getAttribute("data-index") == index);
-        panel[0].classList.add("activeDec");
-    });
+    const panel = [...tabPanelsDescription].filter(el => el.getAttribute("data-index") == index);
+    panel[0].classList.add("active");
+  });
 }
 
+/*--открытие закрытие подробных характеристик светильника--*/
+let btnDiscriptionOpenClose = document.getElementById('btnDiscriptionOpenClose');
+
+btnDiscriptionOpenClose.addEventListener('click', function () {
+
+  let hideDiscription = document.getElementById('mainDiscription');
+  hideDiscription.classList.toggle('hide');
+
+
+  /*--задержка инициалицазии slickSlider после запуска ajax--*/
+  setTimeout(function () {
+    $(".sliсkSlider").slick(options)
+  }, 100);
+  /*----задержка инициалицазии slickSlider после запуска ajax----*/
+
+});
+
+/*--плавная прокрутка к новому окну характеристик "якорь"--*/
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+anchors.forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const blockID = anchor.getAttribute('href').substring(1)
+
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'end'
+    })
+
+    // window.scrollBy(0, -10)
+  })
+});
+
+
+/*/!*--полные характеристики светильника--*!/
+let btnDiscription = document.getElementById('btnDiscription');
+
+btnDiscription.addEventListener('click', function () {
+
+  console.log('---------****---->', btnDiscription);
+
+  $(document).ready(function () {
+    let getSomeDate = function () {
+      let date;
+
+      $.ajax({
+        url: 'lamp.json',
+        dataType: 'json',
+        success: function (resp) {
+          date = resp;
+          mainDiscription(date);
+        }
+      });
+      return date;
+    };
+    getSomeDate();
+
+    /!*--вставляю тип и артикль на главной странице--*!/
+    function mainDiscription(date) {
+      let mainDiscription = date.map((el, item) => {
+        return (`
+                               <div id="mainDiscription">
+        <div class="more-description-wrap">
+          <p>PRS/R ECO LED 32Вт 4000лм</p>
+          <div class="slider sliсkSlider">
+            <img src="img/001_PRSR_ECO_LED/011-img.png" alt="">
+            <img src="img/001_PRSR_ECO_LED/012-img.png" alt="">
+            <img src="img/001_PRSR_ECO_LED/013-img.png" alt="">
+          </div>
+        </div>
+
+        <div class="tabs-container">
+          <ul class="tabs-description">
+            <li class="active">
+              <p>Характеристики</p>
+            </li>
+            <li>
+              <p>Скачать</p>
+            </li>
+          </ul>
+          <div class="tabs-content">
+            <div class="tabs-panel-description active" data-index="0">
+              <div class="text-description">
+                <div class="column-1">
+                  <div>
+                    <h4>Установка:</h4>
+                    <p>Встраиваются в подвесные потолки типа Армстронг с шириной полки несущего
+                      Т-образного профиля 15 и 24 мм, в потолки GRILIATO или в подшивные
+                      потолки из гипсокартона с помощью клипс.</p>
+                  </div>
+                  <div>
+                    <h4>Конструкция:</h4>
+                    <p>Цельнометаллический сварной корпус из листовой стали, покрытый
+                      белой порошковой краской. В корпусе установлена пускорегулирующая
+                      аппаратура (драйвер).</p>
+                  </div>
+                  <div>
+                    <h4>Оптическая часть:</h4>
+                    <p>Светодиодный модуль ECO LED обеспечивает равномерную
+                      бестеневую засветку рассеивателя светильника. Рассеиватель из
+                      ПММА с призматической структурой в металлической рамке. Тип
+                      светодиодов: SMD.</p>
+                  </div>
+                  <div>
+                    <h4>Комплектация:</h4>
+                    <p>Для встройки в подшивные потолки из гипсокартона необходимо
+                      заказать комплект клипс. Код заказа клипс — 2905000110
+                      (на один светильник заказывать 4 клипсы).</p>
+                  </div>
+                  <div>
+                    <h4>Области использования:</h4>
+                    <p>HoReCa / гостиницы / рестораны / кафе
+                      ЖКХ
+                      Культурно-развлекательные учреждения
+                      Медицинские учреждения
+                      Образовательные учреждения
+                      Офисно-административные объекты
+                      Транспортные узлы (вокзалы, аэропорты)
+                      ТРЦ</p>
+                  </div>
+                </div>
+                <div class="column-2">
+                  <h4>Технические характеристики:</h4>
+                  <div class="column-2-wrap">
+                    <div>Артикул:</div>
+                    <div>1032000100</div>
+                    <div>Тип ИС:</div>
+                    <div>LED</div>
+                    <div>Световой поток:</div>
+                    <div>4000лм</div>
+                    <div>Мощность светильника:</div>
+                    <div>32Вт</div>
+                    <div>Энергоэффективность:</div>
+                    <div>125лм/Вт</div>
+                    <div>Цветовая температура:</div>
+                    <div>4000К</div>
+                    <div>Напряжение питания:</div>
+                    <div>230В</div>
+                    <div>Степень защиты (IP):</div>
+                    <div>IP20</div>
+                    <div>Вес:</div>
+                    <div>4.5кг</div>
+                    <div>Габариты АхВхС:</div>
+                    <div>595х595х85мм</div>
+                    <div id="pic">
+                      <img src="img/pic/pic-1.png" alt="" title="Класс защиты I от поражением электрическим током">
+                      <img src="img/pic/pic-2.png" alt="" title="Степень защиты IP">
+                      <img src="img/pic/pic-3.png" alt="" title="Ударопрочность Дж">
+                      <img src="img/pic/pic-4.png" alt="" title="Климатическая зона">
+                      <img src="img/pic/pic-5.png" alt="" title="Может работать от переменного и постоянного тока ">
+                      <img src="img/pic/pic-6.png" alt="" title="Класс энергоеффективности">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabs-panel-description" data-index="1">
+              <div>
+                <div class="download-wrap">
+                  <div>
+                    <p>Описание</p>
+                    <a href="download/001_PRSR_ECO_LED/011-description.pdf" download=""><img src="img/pdf.png" alt=""></a>
+                  </div>
+                  <div>
+                    <p>Паспорт</p>
+                    <a href="download/001_PRSR_ECO_LED/011-passport.pdf" download=""><img src="img/pdf.png" alt=""></a>
+                  </div>
+                  <div>
+                    <p>Этикетка</p>
+                    <a href="download/001_PRSR_ECO_LED/011-energetic.pdf" download=""><img src="img/pdf.png" alt=""></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                       `)
+      });
+
+      $('#mainDiscription').replaceWith(mainDiscription);
+    }
+
+  })
+});*/
 
 /*--слайдер фото светильника--*/
-$(document).ready(function(){
-$('.sliсkSlider').slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
+$(document).ready(function () {
+  $('.owl-carousel').owlCarousel({
     loop:true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                infinite: true,
-                dots: true
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
-});
+    margin:115,
+    nav:false,
+    autoplay:true,
+    smartSpeed:1500, //Время движения слайда
+    autoplayTimeout:3000, //Время смены слайда
+    dots:true,
+    responsive:{
+      0:{
+        items:1
+      },
+      540:{
+        items:3
+      },
+      1080:{
+        items:6
+      }
+    }
+  });
 });
 /*----слайдер фото светильника----*/
+
 
