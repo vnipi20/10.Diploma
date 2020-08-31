@@ -1138,8 +1138,8 @@ p {
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 100%);
 }
-
 /*----вертикальный slick Slider----*/
+
 /*--якорь для плавного перемещения экрана к основным настройкам--*/
 .acr {
     position: relative;
