@@ -583,199 +583,36 @@ btnDiscriptionOpenClose.addEventListener('click', function () {
 });
 
 /*--плавная прокрутка к новому окну характеристик "якорь"--*/
-const anchors = document.querySelectorAll('a[href*="#"]')
+const anchors = document.querySelectorAll('a[href*="#"]');
 
 anchors.forEach((anchor) => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
 
-    const blockID = anchor.getAttribute('href').substring(1)
+    const blockID = anchor.getAttribute('href').substring(1);
 
     document.getElementById(blockID).scrollIntoView({
       behavior: 'smooth',
       block: 'end'
     })
 
-    // window.scrollBy(0, -10)
   })
 });
 
 
-/*/!*--полные характеристики светильника--*!/
-let btnDiscription = document.getElementById('btnDiscription');
-
-btnDiscription.addEventListener('click', function () {
-
-  console.log('---------****---->', btnDiscription);
-
-  $(document).ready(function () {
-    let getSomeDate = function () {
-      let date;
-
-      $.ajax({
-        url: 'lamp.json',
-        dataType: 'json',
-        success: function (resp) {
-          date = resp;
-          mainDiscription(date);
-        }
-      });
-      return date;
-    };
-    getSomeDate();
-
-    /!*--вставляю тип и артикль на главной странице--*!/
-    function mainDiscription(date) {
-      let mainDiscription = date.map((el, item) => {
-        return (`
-                               <div id="mainDiscription">
-        <div class="more-description-wrap">
-          <p>PRS/R ECO LED 32Вт 4000лм</p>
-          <div class="slider sliсkSlider">
-            <img src="img/001_PRSR_ECO_LED/011-img.png" alt="">
-            <img src="img/001_PRSR_ECO_LED/012-img.png" alt="">
-            <img src="img/001_PRSR_ECO_LED/013-img.png" alt="">
-          </div>
-        </div>
-
-        <div class="tabs-container">
-          <ul class="tabs-description">
-            <li class="active">
-              <p>Характеристики</p>
-            </li>
-            <li>
-              <p>Скачать</p>
-            </li>
-          </ul>
-          <div class="tabs-content">
-            <div class="tabs-panel-description active" data-index="0">
-              <div class="text-description">
-                <div class="column-1">
-                  <div>
-                    <h4>Установка:</h4>
-                    <p>Встраиваются в подвесные потолки типа Армстронг с шириной полки несущего
-                      Т-образного профиля 15 и 24 мм, в потолки GRILIATO или в подшивные
-                      потолки из гипсокартона с помощью клипс.</p>
-                  </div>
-                  <div>
-                    <h4>Конструкция:</h4>
-                    <p>Цельнометаллический сварной корпус из листовой стали, покрытый
-                      белой порошковой краской. В корпусе установлена пускорегулирующая
-                      аппаратура (драйвер).</p>
-                  </div>
-                  <div>
-                    <h4>Оптическая часть:</h4>
-                    <p>Светодиодный модуль ECO LED обеспечивает равномерную
-                      бестеневую засветку рассеивателя светильника. Рассеиватель из
-                      ПММА с призматической структурой в металлической рамке. Тип
-                      светодиодов: SMD.</p>
-                  </div>
-                  <div>
-                    <h4>Комплектация:</h4>
-                    <p>Для встройки в подшивные потолки из гипсокартона необходимо
-                      заказать комплект клипс. Код заказа клипс — 2905000110
-                      (на один светильник заказывать 4 клипсы).</p>
-                  </div>
-                  <div>
-                    <h4>Области использования:</h4>
-                    <p>HoReCa / гостиницы / рестораны / кафе
-                      ЖКХ
-                      Культурно-развлекательные учреждения
-                      Медицинские учреждения
-                      Образовательные учреждения
-                      Офисно-административные объекты
-                      Транспортные узлы (вокзалы, аэропорты)
-                      ТРЦ</p>
-                  </div>
-                </div>
-                <div class="column-2">
-                  <h4>Технические характеристики:</h4>
-                  <div class="column-2-wrap">
-                    <div>Артикул:</div>
-                    <div>1032000100</div>
-                    <div>Тип ИС:</div>
-                    <div>LED</div>
-                    <div>Световой поток:</div>
-                    <div>4000лм</div>
-                    <div>Мощность светильника:</div>
-                    <div>32Вт</div>
-                    <div>Энергоэффективность:</div>
-                    <div>125лм/Вт</div>
-                    <div>Цветовая температура:</div>
-                    <div>4000К</div>
-                    <div>Напряжение питания:</div>
-                    <div>230В</div>
-                    <div>Степень защиты (IP):</div>
-                    <div>IP20</div>
-                    <div>Вес:</div>
-                    <div>4.5кг</div>
-                    <div>Габариты АхВхС:</div>
-                    <div>595х595х85мм</div>
-                    <div id="pic">
-                      <img src="img/pic/pic-1.png" alt="" title="Класс защиты I от поражением электрическим током">
-                      <img src="img/pic/pic-2.png" alt="" title="Степень защиты IP">
-                      <img src="img/pic/pic-3.png" alt="" title="Ударопрочность Дж">
-                      <img src="img/pic/pic-4.png" alt="" title="Климатическая зона">
-                      <img src="img/pic/pic-5.png" alt="" title="Может работать от переменного и постоянного тока ">
-                      <img src="img/pic/pic-6.png" alt="" title="Класс энергоеффективности">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tabs-panel-description" data-index="1">
-              <div>
-                <div class="download-wrap">
-                  <div>
-                    <p>Описание</p>
-                    <a href="download/001_PRSR_ECO_LED/011-description.pdf" download=""><img src="img/pdf.png" alt=""></a>
-                  </div>
-                  <div>
-                    <p>Паспорт</p>
-                    <a href="download/001_PRSR_ECO_LED/011-passport.pdf" download=""><img src="img/pdf.png" alt=""></a>
-                  </div>
-                  <div>
-                    <p>Этикетка</p>
-                    <a href="download/001_PRSR_ECO_LED/011-energetic.pdf" download=""><img src="img/pdf.png" alt=""></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-                       `)
-      });
-
-      $('#mainDiscription').replaceWith(mainDiscription);
-    }
-
-  })
-});*/
-
-/*--слайдер фото светильника--*/
+/*--вертикальный slick Slider--*/
 $(document).ready(function () {
-  $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:115,
-    nav:false,
-    autoplay:true,
-    smartSpeed:1500, //Время движения слайда
-    autoplayTimeout:3000, //Время смены слайда
-    dots:true,
-    responsive:{
-      0:{
-        items:1
-      },
-      540:{
-        items:3
-      },
-      1080:{
-        items:6
-      }
-    }
+  $('.owl-carousel').slick({
+    loop: true,
+    margin: 115,
+    autoplay: true,
+    autoplaySpeed: 50,
+    vertical: true,
+    slidesToShow: 5,
+    slidesToScroll: 3,
+    speed: 7000,
   });
 });
-/*----слайдер фото светильника----*/
+/*----вертикальный slick Slider----*/
 
 

@@ -938,10 +938,12 @@ p {
     -ms-user-select: none;
     user-select: none;
 }
-.reg{
-     margin: 25px;
- }
-.reg a{
+
+.reg {
+    margin: 25px;
+}
+
+.reg a {
     text-decoration: none;
 }
 
@@ -1096,18 +1098,52 @@ p {
     width: 60px;
     cursor: pointer;
 }
+
 .download-wrap img:hover {
     margin: 7px auto;
     width: 63px;
     opacity: 0.7;
 }
+
 .hide {
     display: none !important;
 }
-.owl-carousel{
-    margin: 0 auto;
+/*--вертикальный slick Slider--*/
+.slider-fixed{
+    position: sticky;
+    top: 50px;
 }
-.owl-carousel img{
-    margin: 0 auto;
+.owl-carousel {
     width: 150px;
+    height: 560px;
+    margin: 70px auto;
 }
+.owl-carousel:before {
+    content: "";
+    display: block;
+    height: 50px;
+    position: relative;
+    top: 40px;
+    z-index: 1000;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 100%);
+}
+.owl-carousel:after {
+    content: "";
+    display: block;
+    height: 50px;
+    position: relative;
+    top: -45px;
+    z-index: 1000;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 100%);
+}
+
+/*----вертикальный slick Slider----*/
+/*--якорь для плавного перемещения экрана к основным настройкам--*/
+.acr {
+    position: relative;
+    top: 180px;
+}
+
+/*----якорь для плавного перемещения экрана к основным настройкам----*/
