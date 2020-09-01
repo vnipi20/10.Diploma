@@ -231,6 +231,7 @@ body {
 
 .decorRange:hover {
     opacity: 1;
+    box-shadow: 0 5px 15px 0 rgba(72, 77, 74, 0.3);
 }
 
 .decorRange::-webkit-slider-thumb {
@@ -361,7 +362,7 @@ option:hover {
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
-    background-color: silver;
+    background-color: #9f9f9f;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -429,16 +430,17 @@ option:hover {
 }
 
 .buttons div {
-    border: 2px solid silver;
+    border: 2px solid #9f9f9f;
     border-radius: 5px;
     margin: 10px;
     opacity: 0.9;
 }
 
 .buttons div:hover {
+    background: white;
+    color: black;
     border: 2px solid #FF4518;
-    opacity: 1;
-    box-shadow: 2px 2px 5px 2px #a0a0a0;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
 }
 
 .buttons img:hover ~ .button-name {
@@ -468,14 +470,16 @@ option:hover {
 
 .button-name {
     height: 40px;
-    border-top: 2px solid silver;
+    border-top: 2px solid #9f9f9f;
     text-align: center;
     padding: 5px;
 }
 
 .button-name:hover {
-    border-top: 2px solid #FF4518;
-    background: #FF4518;
+    background: white;
+    color: black;
+    border: 2px solid #FF4518;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
 }
 
 /* переключение class border */
@@ -697,6 +701,8 @@ option:hover {
 .btn-catalog:hover {
     background: white;
     color: black;
+    border: 2px solid #FF4518;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
 }
 
 .btn-catalog-link {
@@ -723,11 +729,14 @@ option:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-transform: uppercase;
 }
 
 #btn-catalog-main:hover {
     background: white;
     color: black;
+    border: 2px solid #FF4518;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
 }
 
 .btn-catalog-main {
@@ -747,12 +756,14 @@ option:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-transform: uppercase;
 }
 
 .btn-catalog-main:hover {
     background: white;
     color: black;
     border: 2px solid #FF4518;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
 }
 
 .btn-catalog-main:focus {
@@ -1108,16 +1119,29 @@ p {
 .hide {
     display: none !important;
 }
+
 /*--вертикальный slick Slider--*/
-.slider-fixed{
+.slider-fixed {
     position: sticky;
     top: 50px;
 }
+
 .owl-carousel {
     width: 150px;
     height: 560px;
     margin: 70px auto;
+    cursor: pointer;
+    user-select: none;
 }
+
+.owl-carousel img:focus {
+    outline: none;
+}
+
+.owl-carousel img:hover {
+    opacity: 0.5;
+}
+
 .owl-carousel:before {
     content: "";
     display: block;
@@ -1128,6 +1152,7 @@ p {
     background: rgb(255, 255, 255);
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 100%);
 }
+
 .owl-carousel:after {
     content: "";
     display: block;
@@ -1138,12 +1163,17 @@ p {
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 100%);
 }
+
 /*----вертикальный slick Slider----*/
 
 /*--якорь для плавного перемещения экрана к основным настройкам--*/
 .acr {
     position: relative;
-    top: 180px;
+    top: 30px;
+    background-color: red;
+/*    z-index: 1000;
+    width: 200px;
+    height: 10px;*/
 }
 
 /*----якорь для плавного перемещения экрана к основным настройкам----*/
