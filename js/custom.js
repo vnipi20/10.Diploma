@@ -133,6 +133,153 @@ calculation[0].addEventListener('click', function () {
   addfieldRoom = fieldRoom.style;
   addfieldRoom.backgroundColor = "#000638";
 
+  /*--подключение ajax для отображение результатов расета--*/
+  $(document).ready(function () {
+    let getSomeDate = function () {
+      let date;
+
+      $.ajax({
+        url: 'lamp.json',
+        dataType: 'json',
+        success: function (resp) {
+          date = resp;
+          updateResultsColor();
+          updateResults(date);
+          updateOrderFormImg(date);
+
+        }
+      });
+      return date;
+    };
+    getSomeDate();
+
+    /*--вставляю шкалу освещенности--*/
+    function updateResultsColor() {
+      let updateResultsColor = (`
+                    <!--цветовая шкала-->
+                    <div class="box-color-wrap">
+                       <div>
+                          <div class="color-0"></div>
+                          <div class="color-text">0</div>
+                       </div>
+                       <div>
+                          <div class="color-100"></div>
+                          <div class="color-text">100</div>
+                       </div>
+                       <div>
+                          <div class="color-200"></div>
+                          <div class="color-text">200</div>
+                       </div>
+                       <div>
+                          <div class="color-300"></div>
+                          <div class="color-text">300</div>
+                       </div>
+                       <div>
+                          <div class="color-400"></div>
+                          <div class="color-text">400</div>
+                       </div>
+                       <div>
+                          <div class="color-500"></div>
+                          <div class="color-text">500</div>
+                       </div>
+                       <div>
+                          <div class="color-600"></div>
+                          <div class="color-text">600</div>
+                       </div>
+                       <div>
+                          <div class="color-700"></div>
+                          <div class="color-text">700</div>
+                       </div>
+                    </div>
+                    <!----цветовая шкала---->
+                  `);
+
+
+      $('#choiceLighting').replaceWith(updateResultsColor);
+    }
+
+    /*--вставляю результаты  расчета--*/
+    function updateResults(date) {
+      let updateResults = date.map((el, item) => {
+        return (`
+                    <!--блок результатов-->
+                    <div class="results-box">
+                       <div class="results-title">Результат расчета</div>
+                       <div class="results-wrap">
+                          <div class="results-box-title">Параметры</div>
+                          <div class="results-box-title">Результат</div>
+                          <div>Количество светильников, шт.</div>
+                          <div>12</div>
+                          <div>Минимальная освещенность, лк</div>
+                          <div>50</div>
+                          <div>Максимальная освещенность, лк</div>
+                          <div>530</div>
+                          <div>Коэф. использования</div>
+                          <div>0.94</div>
+                       </div>
+                       <div class="results-btn-wrap">
+                          <div class="results-btn">
+                             <button class="btn-catalog-main">Отчет</button>
+                             <button class="btn-catalog-main" id="btn-order-js">Заказать</button>
+                          </div>
+                          <div>
+                             <button class="btn-new-calculation" id="reload-site">Новый расчет</button>
+                          </div>
+                       </div>
+                    </div>
+                  `)
+      });
+
+      $('#infoLightingMain').replaceWith(updateResults);
+
+
+      /*--форма заказа светильников popup--*/
+      let popup2 = document.getElementById('popup2');
+      let btnPopupOrder = document.getElementById("btn-order-js");
+      let closeOrder = document.getElementById("font-btn");
+
+      btnPopupOrder.onclick = function () {
+        popup2.style.display = "block";
+      };
+
+      closeOrder.onclick = function () {
+        popup2.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == popup2) {
+          popup2.style.display = "none";
+        }
+      };
+      /*----форма заказа светильников popup----*/
+
+      /*--перезагрузка страници--*/
+      let reloadSite = document.getElementById('reload-site');
+      reloadSite.onclick = function () {
+        window.location.reload();
+      };
+      /*----перезагрузка страници----*/
+
+    }
+
+    function updateOrderFormImg(date) {
+      let updateOrderFormImg = date.map((el, item) => {
+        return (`
+                    
+                    <div class="box-order-img" id="box-order-img-js">
+                    <img src="${el.lamp[atrTypeNum].linkImg001}" alt="">
+                    <p class="box-order-name-lamp">${el.lamp[atrTypeNum].name} ${el.lamp[atrTypeNum].power}Вт - 6 шт.</p>
+                     </div>
+               `)
+      });
+
+      $('#box-order-img-js').replaceWith(updateOrderFormImg);
+    }
+
+  });
+
+  /*----подключение ajax для отображение результатов расета----*/
+
 });
 
 /*--- letiable input range --- */
@@ -315,12 +462,12 @@ var options = {
   slidesToScroll: 1,
 };
 
-
+let atrTypeNum;
 /*--перебор типов светильников--*/
 for (let i = 0, len = lampSubtype.length; i < len; i++) {
   lampSubtype[i].addEventListener('click', function () {
 
-    let atrTypeNum = lampSubtype[i].getAttribute('data-type-num');
+    atrTypeNum = lampSubtype[i].getAttribute('data-type-num');
 
     $(document).ready(function () {
       let getSomeDate = function () {
@@ -598,8 +745,7 @@ anchors.forEach((anchor) => {
 
   })
 });
-
-
+/*----плавная прокрутка к новому окну характеристик "якорь"----*/
 /*--вертикальный slick Slider--*/
 $(document).ready(function () {
   $('.owl-carousel').slick({
@@ -611,8 +757,15 @@ $(document).ready(function () {
     slidesToShow: 5,
     slidesToScroll: 3,
     speed: 7000,
+    prevArrow: false,
+    nextArrow: false,
+
   });
 });
 /*----вертикальный slick Slider----*/
+
+
+
+
 
 

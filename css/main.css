@@ -391,6 +391,12 @@ option:hover {
     position: fixed;
     top: 0;
     z-index: 2000;
+
+    -webkit-animation-name: animOpacity1;
+    -webkit-animation-duration: 0.3s;
+    animation-name: animOpacity1;
+    animation-duration: 0.3s;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .b-popup .b-popup-content {
@@ -404,6 +410,31 @@ option:hover {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px #000;
+}
+
+.b-popup-content {
+    -webkit-animation-name: animatetop1;
+    -webkit-animation-duration: 0.3s;
+    animation-name: animatetop;
+    animation-duration: 0.3s;
+}
+
+@-webkit-keyframes animatetop1 {
+    from {
+        top: -1500px;
+        opacity: 0
+    }
+
+}
+
+@-webkit-keyframes animOpacity1 {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+
 }
 
 /*style img lighting */
@@ -1123,7 +1154,7 @@ p {
 /*--вертикальный slick Slider--*/
 .slider-fixed {
     position: sticky;
-    top: 50px;
+    top: 20px;
 }
 
 .owl-carousel {
@@ -1171,9 +1202,433 @@ p {
     position: relative;
     top: 30px;
     background-color: red;
-/*    z-index: 1000;
-    width: 200px;
-    height: 10px;*/
+    /*    z-index: 1000;
+        width: 200px;
+        height: 10px;*/
 }
 
 /*----якорь для плавного перемещения экрана к основным настройкам----*/
+
+/*--цветовая шкала--*/
+.box-color-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+
+.color-0,
+.color-100,
+.color-200,
+.color-300,
+.color-400,
+.color-500,
+.color-600,
+.color-700 {
+    width: 70px;
+    height: 15px;
+}
+
+.color-text {
+    text-align: center;
+}
+
+.color-0 {
+    background: #000333;
+}
+
+.color-100 {
+    background: #000464;
+}
+
+.color-200 {
+    background: #0018FF;
+}
+
+.color-300 {
+    background: #006400;
+}
+
+.color-400 {
+    background: #32C800;
+}
+
+.color-500 {
+    background: #64FD01;
+}
+
+.color-600 {
+    background: #FFFE00;
+}
+
+.color-700 {
+    background: #FE121A;
+}
+
+/*----цветовая шкала----*/
+
+/*----результаты расчета----*/
+.results-box {
+    width: 800px;
+    height: 450px;
+    margin: 15px auto;
+    border: 1px solid #9f9f9f;
+}
+
+.results-wrap {
+    width: 450px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.results-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 25px auto;
+}
+
+.results-wrap div {
+    height: 30px;
+    line-height: 30px;
+}
+
+.results-wrap div:nth-child(odd) {
+    width: 255px;
+    padding: 5px 5px 5px 20px;
+
+}
+
+.results-wrap div:nth-child(even) {
+    width: 160px;
+    text-align: center;
+    padding: 5px 5px;
+
+}
+
+.results-wrap div {
+    border-bottom: 1px solid #9f9f9f;
+}
+
+.results-box-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.results-title {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #9f9f9f;
+}
+
+.results-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+
+.results-btn-wrap {
+    margin: 40px auto 10px;
+    width: 350px;
+}
+
+.btn-catalog-main {
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    padding: 5px;
+    color: white;
+    box-sizing: border-box;
+    border: 2px solid #FF4518;
+    border-radius: 3px;
+    background: #FF4518;
+    cursor: pointer;
+    margin: 0 5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+.btn-catalog-main:hover {
+    background: white;
+    color: black;
+    border: 2px solid #FF4518;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
+}
+
+.btn-catalog-main:focus {
+    outline: none;
+}
+
+.btn-new-calculation {
+    text-align: center;
+    width: 340px;
+    height: 40px;
+    padding: 5px;
+    color: white;
+    box-sizing: border-box;
+    border: 2px solid #FF4518;
+    border-radius: 3px;
+    background: #FF4518;
+    cursor: pointer;
+    margin: 0 5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+.btn-new-calculation:hover {
+    background: white;
+    color: black;
+    border: 2px solid #FF4518;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
+
+}
+
+.btn-new-calculation:focus {
+    outline: none;
+}
+
+/*--блок результатов--*/
+
+/*--форма заказа светильников popup--*/
+.win-order {
+    width: 400px;
+    height: 550px;
+    border: 1px solid #9f9f9f;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+.box-order-form {
+    width: 100%;
+    height: 300px;
+}
+
+.box-order-img {
+    width: 100%;
+    height: 250px;
+    padding: 20px 100px;
+    box-sizing: border-box;
+}
+
+.box-order-img img {
+    width: 200px;
+}
+
+.box-order-add {
+    width: 100px;
+    height: 190px;
+    padding: 80px 0;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.box-order-name-lamp {
+    font-weight: bold;
+    text-align: center;
+}
+
+.box-order-form {
+    padding: 40px 70px;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    background-color: white;
+    height: 35px;
+    width: 250px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 14px;
+    border: 1px solid #9f9f9f;
+    border-radius: 3px;
+    color: black;
+    outline: none;
+    padding: 0 0 0 3px;
+    margin-bottom: 20px;
+}
+
+.box-order-form input:hover {
+    border: 1px solid orangered;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
+}
+
+.box-order-form input:focus {
+    border: 1px solid orangered;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
+    background-color: rgba(128, 128, 128, 0.1);
+    transition: all 0.2s;
+}
+
+input::-webkit-input-placeholder {
+    text-indent: 0;
+    transition: text-indent 0.3s ease;
+}
+
+input::-moz-placeholder {
+    text-indent: 0;
+    transition: text-indent 0.3s ease;
+}
+
+input:-moz-placeholder {
+    text-indent: 0;
+    transition: text-indent 0.3s ease;
+}
+
+input:-ms-input-placeholder {
+    text-indent: 0;
+    transition: text-indent 0.3s ease;
+}
+
+input:focus::-webkit-input-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+input:focus::-moz-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+input:focus:-moz-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+input:focus:-ms-input-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+
+#font-btn {
+    text-align: center;
+    width: 255px;
+    height: 40px;
+    padding: 5px;
+    color: white;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    line-height: 25px;
+    border: 2px solid #FF4518;
+    border-radius: 3px;
+    background: #FF4518;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#font-btn:hover {
+    background: white;
+    color: black;
+    border: 2px solid #FF4518;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
+}
+
+.font-btn {
+    text-align: center;
+    width: 255px;
+    height: 30px;
+    padding: 5px;
+    color: white;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border: 2px solid #FF4518;
+    border-radius: 3px;
+    background: #FF4518;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.font-btn:hover {
+    background: white;
+    color: black;
+    border: 2px solid #FF4518;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
+}
+
+.b-popup {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+
+    -webkit-animation-name: animOpacity;
+    -webkit-animation-duration: 0.3s;
+    animation-name: animOpacity;
+    animation-duration: 0.3s;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.b-popup .win-order {
+    position: absolute;
+    left: calc(50% - 200px);
+    top: calc(50% - 300px);
+    /*margin: 10% auto 0 auto;*/
+    width: 400px;
+    /* height: 500px;*/
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000;
+}
+
+.win-order {
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.3s;
+    animation-name: animatetop;
+    animation-duration: 0.3s;
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -1500px;
+        opacity: 0
+    }
+
+}
+
+@-webkit-keyframes animOpacity {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+
+}
+
+/*@keyframes animatetop {
+    from {top: 100px; opacity:0}
+    to {top:0; opacity:1}
+}*/
+
+#popup2 {
+    display: none;
+}
+
+/*----форма заказа светильников popup----*/
+
