@@ -26,7 +26,7 @@ dd {
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-    min-height: 100vh;
+  /*  min-height: 100vh;*/
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
@@ -800,6 +800,46 @@ option:hover {
 .btn-catalog-main:focus {
     outline: none;
 }
+.btn-calculation-main {
+    margin: calc(25% - 20px) calc(50% - 175px);
+    text-align: center;
+    width: 350px;
+    height: 40px;
+    padding: 5px;
+    color: white;
+    line-height: 25px;
+    box-sizing: border-box;
+    border: 2px solid #FF4518;
+    border: 2px solid #FF4518;
+    border-radius: 3px;
+    background: #FF4518;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: uppercase;
+}
+
+.btn-calculation-main:hover {
+    background: white;
+    color: black;
+    border: 2px solid #FF4518;
+    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
+}
+
+.btn-calculation-main:focus {
+    outline: none;
+}
+ a{
+    text-decoration: none;
+    color: white;
+}
+ a:hover {
+    color: black;
+}
+
 
 
 /*--KKC--*/
