@@ -1677,15 +1677,13 @@ input:focus:-ms-input-placeholder {
 .b-popup .win-order-ok {
     position: absolute;
     left: calc(50% - 100px);
-    top: calc(50% - 300px);
+    top: calc(50% - 20px);
     width: 200px;
     height: 40px;
     padding: 10px 20px;
-    border: 1px solid #9f9f9f;
     background-color: orangered;
-    border-radius: 5px;
     box-shadow: 0 0 10px #000;
-    /* text-transform: uppercase;*/
+    text-transform: uppercase;
     text-align: center;
 }
 
@@ -1702,8 +1700,11 @@ input:focus:-ms-input-placeholder {
 
 @-webkit-keyframes animatetop2 {
     from {
-        top: -1000px;
+        top: -100px;
         opacity: 0
+    }
+    to {
+        top: calc(50% - 20px);
     }
 
 }

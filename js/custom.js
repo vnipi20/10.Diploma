@@ -244,13 +244,12 @@ calculation[0].addEventListener('click', function () {
 
                 setTimeout(closeOrder.onclick = function () {
                     popup2.style.display = "none";
+                    setTimeout(closeOrder.onclick = function () {
+                        popup3.style.display = "none";
+                    }, 2000);
                 }, 50);
+
             };
-
-
-            setTimeout(popup3.onclick = function () {
-                popup3.style.display = "none";
-            }, 500);
 
             btnPopupOrder.onclick = function () {
                 popup2.style.display = "block";
