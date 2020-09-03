@@ -1242,7 +1242,7 @@ p {
 /*--якорь для плавного перемещения экрана к основным настройкам--*/
 .acr {
     position: relative;
-    top: 30px;
+    top: 350px;
     background-color: red;
     /*    z-index: 1000;
         width: 200px;

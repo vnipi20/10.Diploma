@@ -1,5 +1,13 @@
 let boxFront = document.getElementsByClassName('boxFront');
-let box = document.getElementsByClassName('box');
+/*let box = document.getElementsByClassName('box');*/
+let boxRed = document.getElementsByClassName('boxRed');
+let boxOrange = document.getElementsByClassName('boxOrange');
+let boxYellow = document.getElementsByClassName('boxYellow');
+let boxGreen = document.getElementsByClassName('boxGreen');
+let boxLightBlue = document.getElementsByClassName('boxLightBlue');
+let boxBlue = document.getElementsByClassName('boxBlue');
+let boxWhite = document.getElementsByClassName('boxWhite');
+
 let wrapRoom = document.querySelectorAll('.grid__item');
 let fieldRoom = document.getElementById('fieldRoom');
 /*let boxField = document.getElementsByClassName('boxField');*/
@@ -11,7 +19,60 @@ let radiusBS = 25;
 let stretchBS = 20;
 let colorBS = ['#FB121A', '#FDAC02', '#F9F600', '#0CFD10', '#05EDEE', '#0817FB', '#FEFEFE'];
 
-/*--получение нажатого div блока в grid--*/
+
+
+
+let tree = [];
+
+$('#fieldRoom').on('click', 'div', function () {
+    let valueArr = this.innerHTML;
+    tree.push(valueArr);
+
+    /*--длина массива--*/
+    var index;
+    for (index = 0; index < tree.length; ++index) {
+        console.log('length arr', tree.length);
+    }
+});
+
+
+$('#fieldRoom').click(function (event) {
+
+    const addDivBox = function () {
+        event.target.innerHTML = `<div class="lightingWrap">
+                                 <div class="boxFront"></div>
+<!--                                 <div class="boxRed"></div>
+                                 <div class="boxOrange"></div>
+                                 <div class="boxYellow"></div>
+                                 <div class="boxGreen"></div>
+                                 <div class="boxLightBlue"></div>
+                                 <div class="boxBlue"></div>
+                                 <div class="boxWhite"></div>-->
+                                 
+                                 
+                                 <div class="boxWhite"></div>
+                                 <div class="boxBlue"></div>
+                                 <div class="boxLightBlue"></div>
+                                 <div class="boxGreen"></div>
+                                 <div class="boxYellow"></div>
+                                 <div class="boxOrange"></div>
+                                  <div class="boxRed"></div>
+                                 
+                                 </div>`;
+    };
+    addDivBox();
+});
+
+/*
+$(':not(#grid)').on('click touchstart', function (e) {
+    e.preventDefault();
+    return false;
+});
+*/
+
+
+
+/*/!*--получение нажатого div блока в grid--*!/
 let grid = document.querySelector(".grid");
 
 let gridItemBlock = [];
@@ -33,10 +94,10 @@ grid.addEventListener("click", function (event) {
 
 });
 console.log('===>', gridItemBlock);
-/*----получение нажатого div блока в grid----*/
+/!*----получение нажатого div блока в grid----*!/
 
 
-/* add lamps in the room*/
+/!* add lamps in the room*!/
 grid.addEventListener('click', function () {
     let div = document.createElement('div');
     div.innerHTML = `<div class="lightingWrap">
@@ -52,7 +113,7 @@ grid.addEventListener('click', function () {
     boxField[0].append(div);
     console.log('*****>', div);
 });
-/* add lamps in the room*/
+/!* add lamps in the room*!/*/
 
 calculation[0].addEventListener('click', function () {
 
@@ -69,7 +130,7 @@ calculation[0].addEventListener('click', function () {
      value inpute range reserve */
 
     let kN = +getReflectionCeiling + +getReflectionWalls + +getReflectionFloor + +getHeightPlane + +getReserve;
-    let k1 = 1.2 / +getRangeHeight * 2 * kN;
+    let k1 = 2.2 / +getRangeHeight * 2 * kN;
     let k2 = 1.5 / +getRangeHeight * 2 * kN;
     let k3 = 1.8 / +getRangeHeight * 2 * kN;
     let k4 = 2.1 / +getRangeHeight * 2 * kN;
@@ -93,33 +154,41 @@ calculation[0].addEventListener('click', function () {
     let boxShadow600 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k6 + 'px' + ' ' + stretchBS * k6 + 'px' + ' ' + colorBS[5];
     let boxShadow700 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k7 + 'px' + ' ' + stretchBS * k7 + 'px' + ' ' + colorBS[6];
 
-    newStyle = box[0].style;
-    newStyle.zIndex = 1000;
-    newStyle.boxShadow = boxShadow100;
-
-    newStyle2 = box[1].style;
-    newStyle2.zIndex = 800;
-    newStyle2.boxShadow = boxShadow200;
-
-    newStyle3 = box[2].style;
-    newStyle3.zIndex = 600;
-    newStyle3.boxShadow = boxShadow300;
-
-    newStyle4 = box[3].style;
-    newStyle4.zIndex = 500;
-    newStyle4.boxShadow = boxShadow400;
-
-    newStyle5 = box[4].style;
-    newStyle5.zIndex = 400;
-    newStyle5.boxShadow = boxShadow500;
-
-    newStyle6 = box[5].style;
-    newStyle6.zIndex = 300;
-    newStyle6.boxShadow = boxShadow600;
-
-    newStyle7 = box[6].style;
-    newStyle7.zIndex = 200;
-    newStyle7.boxShadow = boxShadow700;
+    for (let item = 0; item < boxWhite.length; ++item) {
+        newStyle7 = boxWhite[item].style;
+        newStyle7.zIndex = 200;
+        newStyle7.boxShadow = boxShadow700;
+    }
+    for (let item = 0; item < boxBlue.length; ++item) {
+        newStyle6 = boxBlue[item].style;
+        newStyle6.zIndex = 300;
+        newStyle6.boxShadow = boxShadow600;
+    }
+    for (let item = 0; item < boxLightBlue.length; ++item) {
+        newStyle5 = boxLightBlue[item].style;
+        newStyle5.zIndex = 400;
+        newStyle5.boxShadow = boxShadow500;
+    }
+    for (let item = 0; item < boxGreen.length; ++item) {
+        newStyle4 = boxGreen[item].style;
+        newStyle4.zIndex = 500;
+        newStyle4.boxShadow = boxShadow400;
+    }
+    for (let item = 0; item < boxYellow.length; ++item) {
+        newStyle3 = boxYellow[item].style;
+        newStyle3.zIndex = 600;
+        newStyle3.boxShadow = boxShadow300;
+    }
+    for (let item = 0; item < boxOrange.length; ++item) {
+        newStyle2 = boxOrange[item].style;
+        newStyle2.zIndex = 800;
+        newStyle2.boxShadow = boxShadow200;
+    }
+    for (let item = 0; item < boxRed.length; ++item) {
+        newStyle = boxRed[item].style;
+        newStyle.zIndex = 1000;
+        newStyle.boxShadow = boxShadow100;
+    }
 
     /* addStyleField = wrapRoom.style;
      addStyleField.backgroundColor = "green";*/
