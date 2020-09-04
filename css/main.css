@@ -172,10 +172,20 @@ body {
     height: 24px;
     background: #FF4518;
     z-index: 1200;
-
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.box {
+.boxWhite,
+.boxBlue,
+.boxLightBlue,
+.boxGreen,
+.boxYellow,
+.boxOrange,
+.boxRed {
     position: absolute;
     top: -12px;
     left: -12px;
@@ -183,6 +193,11 @@ body {
     height: 24px;
     background: red;
     border-radius: 50%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .choiceLighting {
@@ -401,10 +416,10 @@ option:hover {
 
 .b-popup .b-popup-content {
     position: absolute;
-    left: calc(50% - 450px);
-    top: calc(50% - 275px);
+    left: calc(50% - 525px);
+    top: calc(50% - 300px);
     /*margin: 10% auto 0 auto;*/
-    width: 900px;
+    width: 1050px;
     /* height: 500px;*/
     padding: 10px;
     background-color: white;
@@ -439,9 +454,9 @@ option:hover {
 
 /*style img lighting */
 .containerCatalogLt {
-    width: 900px;
+    width: 1050px;
     min-width: 750px;
-    height: 500px;
+    height: 600px;
     margin: 10px auto;
     overflow: auto;
 }
@@ -456,7 +471,7 @@ option:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 280px;
+    width: 320px;
     height: 400px;
 }
 
@@ -474,15 +489,14 @@ option:hover {
     box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
 }
 
-.buttons img:hover ~ .button-name {
-    border-top: 2px solid #FF4518;
-    background: #FF4518;
+.buttons img:hover {
+
 }
 
 .buttons img {
-    width: 85px;
-    padding: 0 15px;
-    height: 75px;
+    width: 115px;
+    padding: 0 10px;
+    height: 100px;
     opacity: 0.9;
 }
 
@@ -493,25 +507,12 @@ option:hover {
 .buttons label {
     text-align: center;
     display: block;
-    width: 115px;
-    height: 115px;
+    width: 135px;
+    height: 135px;
     cursor: pointer;
     overflow: hidden;
 }
 
-.button-name {
-    height: 40px;
-    border-top: 2px solid #9f9f9f;
-    text-align: center;
-    padding: 5px;
-}
-
-.button-name:hover {
-    background: white;
-    color: black;
-    border: 2px solid #FF4518;
-    box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
-}
 
 /* переключение class border */
 
@@ -519,12 +520,9 @@ option:hover {
     border: 2px solid #FF4518;
     opacity: 1;
     box-shadow: 2px 2px 5px 2px #a0a0a0;
+    background: #e1e1e1;
 }
 
-.active-name {
-    border-top: 2px solid #FF4518;
-    background: #FF4518;
-}
 
 /* переключение class border */
 
@@ -1693,7 +1691,8 @@ input:focus:-ms-input-placeholder {
     animation-name: animatetop2;
     animation-duration: 0.3s;
 }
-.win-order-ok p{
+
+.win-order-ok p {
     color: white;
 }
 

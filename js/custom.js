@@ -15,14 +15,13 @@ let calculation = document.getElementsByClassName('calculation-js');
 
 let widthBS = 0;
 let heightBS = 0;
-let radiusBS = 25;
-let stretchBS = 20;
+let radiusBS = 15;
+let stretchBS = 10;
 let colorBS = ['#FB121A', '#FDAC02', '#F9F600', '#0CFD10', '#05EDEE', '#0817FB', '#FEFEFE'];
 
 
-
-
 let tree = [];
+let lightFlowLamp = 4000;
 
 $('#fieldRoom').on('click', 'div', function () {
     let valueArr = this.innerHTML;
@@ -31,7 +30,7 @@ $('#fieldRoom').on('click', 'div', function () {
     /*--длина массива--*/
     var index;
     for (index = 0; index < tree.length; ++index) {
-        console.log('length arr', tree.length);
+        quantityLamp = tree.length / 2;
     }
 });
 
@@ -41,15 +40,6 @@ $('#fieldRoom').click(function (event) {
     const addDivBox = function () {
         event.target.innerHTML = `<div class="lightingWrap">
                                  <div class="boxFront"></div>
-<!--                                 <div class="boxRed"></div>
-                                 <div class="boxOrange"></div>
-                                 <div class="boxYellow"></div>
-                                 <div class="boxGreen"></div>
-                                 <div class="boxLightBlue"></div>
-                                 <div class="boxBlue"></div>
-                                 <div class="boxWhite"></div>-->
-                                 
-                                 
                                  <div class="boxWhite"></div>
                                  <div class="boxBlue"></div>
                                  <div class="boxLightBlue"></div>
@@ -69,7 +59,6 @@ $(':not(#grid)').on('click touchstart', function (e) {
     return false;
 });
 */
-
 
 
 /*/!*--получение нажатого div блока в grid--*!/
@@ -129,22 +118,29 @@ calculation[0].addEventListener('click', function () {
     let getReserve = reserveValue.textContent; /* get let
      value inpute range reserve */
 
-    let kN = +getReflectionCeiling + +getReflectionWalls + +getReflectionFloor + +getHeightPlane + +getReserve;
-    let k1 = 2.2 / +getRangeHeight * 2 * kN;
-    let k2 = 1.5 / +getRangeHeight * 2 * kN;
-    let k3 = 1.8 / +getRangeHeight * 2 * kN;
-    let k4 = 2.1 / +getRangeHeight * 2 * kN;
-    let k5 = 2.4 / +getRangeHeight * 2 * kN;
-    let k6 = 2.7 / +getRangeHeight * 2 * kN;
-    let k7 = 3 / +getRangeHeight * 2 * kN, styleBoxFrontBc, styleBoxFrontBr;
 
-    console.log('--->', getRangeHeight);
-    console.log('--->', k2);
+    let kN = +getReflectionCeiling + +getReflectionWalls + +getReflectionFloor + +getHeightPlane + +getReserve;
+    let k1 = 0.7 / +getRangeHeight * 2 * kN * lightFlowLamp/4500;
+    let k2 = 1 / +getRangeHeight * 2 * kN * lightFlowLamp/3500;
+    let k3 = 1.3 / +getRangeHeight * 2 * kN * lightFlowLamp/3000;
+    let k4 = 1.6 / +getRangeHeight * 2 * kN * lightFlowLamp/2500;
+    let k5 = 1.9 / +getRangeHeight * 2 * kN * lightFlowLamp/2500;
+    let k6 = 2.2 / +getRangeHeight * 2 * kN * lightFlowLamp/2500;
+    let k7 = 2.5 / +getRangeHeight * 2 * kN, styleBoxFrontBc, styleBoxFrontBr;
+
+    console.log('--lightFlowLamp->', lightFlowLamp);
+    console.log('--k1->', k1);
+    console.log('-k2-->', k2);
+    console.log('-k3-->', k3);
+    console.log('-k4-->', k4);
+    console.log('-k5-->', k5);
+    console.log('-k6-->', k6);
+    console.log('-k7-->', k7);
 
     styleBoxFrontBc = boxFront[0].style;
     styleBoxFrontBc.backgroundColor = "orangered";
     styleBoxFrontBr = boxFront[0].style;
-    styleBoxFrontBr.border = "1px solid #000638";
+    styleBoxFrontBr.border = "0px solid #000638";
 
     let boxShadow100 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k1 + 'px' + ' ' + stretchBS * k1 + 'px' + ' ' + colorBS[0];
     let boxShadow200 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k2 + 'px' + ' ' + stretchBS * k2 + 'px' + ' ' + colorBS[1];
@@ -195,9 +191,8 @@ calculation[0].addEventListener('click', function () {
 
     for (let i = 0; i < wrapRoom.length; i++) { // проходим циклом по всем элементам объекта
         wrapRoom[i].style.backgroundColor = "#000638"; // устанавливаем красный цвет текста каждому элементу
-        console.log('wrapRoom', wrapRoom[i]);
     }
-    console.log('wrapRoom', wrapRoom);
+    /*    console.log('wrapRoom', wrapRoom);*/
 
     addfieldRoom = fieldRoom.style;
     addfieldRoom.backgroundColor = "#000638";
@@ -221,6 +216,7 @@ calculation[0].addEventListener('click', function () {
             return date;
         };
         getSomeDate();
+
 
         /*--вставляю шкалу освещенности--*/
         function updateResultsColor() {
@@ -278,7 +274,7 @@ calculation[0].addEventListener('click', function () {
                           <div class="results-box-title">Параметры</div>
                           <div class="results-box-title">Результат</div>
                           <div>Количество светильников, шт.</div>
-                          <div>12</div>
+                          <div>${quantityLamp}</div>
                           <div>Минимальная освещенность, лк</div>
                           <div>50</div>
                           <div>Максимальная освещенность, лк</div>
@@ -288,8 +284,7 @@ calculation[0].addEventListener('click', function () {
                        </div>
                        <div class="results-btn-wrap">
                           <div class="results-btn">
-                             <button class="btn-catalog-main">Отчет</button>
-                             <button class="btn-catalog-main" id="btn-order-js">Заказать</button>
+                             <button class="btn-new-calculation" id="btn-order-js">Заказать</button>
                           </div>
                           <div>
                              <button class="btn-new-calculation" id="reload-site">Новый расчет</button>
@@ -317,17 +312,11 @@ calculation[0].addEventListener('click', function () {
                         popup3.style.display = "none";
                     }, 2000);
                 }, 50);
-
             };
 
             btnPopupOrder.onclick = function () {
                 popup2.style.display = "block";
             };
-
-            /*     closeOrder.onclick = function () {
-                   popup2.style.display = "none";
-                 };*/
-
 
             window.onclick = function (event) {
                 if (event.target == popup2) {
@@ -335,51 +324,32 @@ calculation[0].addEventListener('click', function () {
                 }
             };
             /*----форма заказа светильников popup----*/
-
-
-            /*      /!*--popup3--*!/
-                  let popup3 = document.getElementById('popup3');
-                  let btnSend = document.getElementById("font-btn");
-
-                  btnSend.onclick = function () {
-                    popup3.style.display = "block";
-                  };
-
-                  window.onclick = function (event) {
-                    if (event.target == popup3) {
-                      popup3.style.display = "none";
-                    }
-                  };
-                  /!*----popup3----*!/*/
-
-
             /*--перезагрузка страници--*/
             let reloadSite = document.getElementById('reload-site');
             reloadSite.onclick = function () {
                 window.location.reload();
             };
             /*----перезагрузка страници----*/
-
         }
+
+        /*--вставка данных в блок заказа светильников--*/
 
         function updateOrderFormImg(date) {
-            let updateOrderFormImg = date.map((el, item) => {
-                return (`
-                    
-                    <div class="box-order-img" id="box-order-img-js">
-                    <img src="${el.lamp[atrTypeNum].linkImg001}" alt="">
-                    <p class="box-order-name-lamp">${el.lamp[atrTypeNum].name} ${el.lamp[atrTypeNum].power}Вт - 6 шт.</p>
-                     </div>
-               `)
-            });
+            setTimeout(function () {
+                let updateOrderFormImg = date.map((el, item) => {
+                    return (`
+                            <div class="box-order-img" id="box-order-img-js">
+                            <img src="${el.lamp[atrTypeNum].linkImg001}" alt="">
+                            <p class="box-order-name-lamp">${el.lamp[atrTypeNum].name} ${el.lamp[atrTypeNum].power}Вт - ${quantityLamp} шт.</p>
+                             </div>
+                           `)
+                });
 
-            $('#box-order-img-js').replaceWith(updateOrderFormImg);
+                $('#box-order-img-js').replaceWith(updateOrderFormImg);
+            }, 200);
         }
-
     });
-
-    /*----подключение ajax для отображение результатов расета----*/
-
+    /*----подключение ajax для отображение результатов расчета----*/
 });
 
 /*--- letiable input range --- */
@@ -410,7 +380,7 @@ reserveValue.innerHTML = kReserve.value;
 /*--letiable input range-- */
 /*--- function value input range height --- */
 rangeHeight.oninput = function () {
-    heightValue.innerHTML = 2 + +rangeHeight.value;
+    heightValue.innerHTML =  +rangeHeight.value;
 };
 /*--- function value input range K celling --- */
 kReflectionCeiling.oninput = function () {
@@ -581,7 +551,7 @@ for (let i = 0, len = lampSubtype.length; i < len; i++) {
                         /*--задержка инициалицазии slickSlider после запуска ajax--*/
                         setTimeout(function () {
                             $(".sliсkSlider").slick(options)
-                        }, 500);
+                        }, 200);
                         /*----задержка инициалицазии slickSlider после запуска ajax----*/
 
                         date = resp;
@@ -592,15 +562,28 @@ for (let i = 0, len = lampSubtype.length; i < len; i++) {
                         mainDiscription(date);
                         mainSpecifications(date);
                         mainDownloadInstructions(date);
+                        quantityLampF(date);
                     }
                 });
                 return date;
             };
             getSomeDate();
 
+
+            /*--получение данных характеристик из json--*/
+            function quantityLampF(date) {
+                let mainLightingName = date.map((el, item) => {
+
+                    return (
+                        lightFlowLamp = el.lamp[atrTypeNum].lightFlow
+                       )
+                });
+            }
+
             /*--вставляю тип и артикль на главной странице--*/
             function updateLightingName(date) {
                 let mainLightingName = date.map((el, item) => {
+
                     return (`
                                <div id="selectLightingName">
                                Светильник: ${el.lamp[atrTypeNum].name} 
@@ -852,11 +835,11 @@ $(document).ready(function () {
         loop: true,
         margin: 115,
         autoplay: true,
-        autoplaySpeed: 50,
+        autoplaySpeed: 100,
         vertical: true,
         slidesToShow: 5,
         slidesToScroll: 3,
-        speed: 7000,
+        speed: 10000,
         prevArrow: false,
         nextArrow: false,
 
