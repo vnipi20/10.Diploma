@@ -129,13 +129,7 @@ calculation[0].addEventListener('click', function () {
     let k7 = 2.5 / +getRangeHeight * 2 * kN, styleBoxFrontBc, styleBoxFrontBr;
 
     console.log('--lightFlowLamp->', lightFlowLamp);
-    console.log('--k1->', k1);
-    console.log('-k2-->', k2);
-    console.log('-k3-->', k3);
-    console.log('-k4-->', k4);
-    console.log('-k5-->', k5);
-    console.log('-k6-->', k6);
-    console.log('-k7-->', k7);
+
 
     styleBoxFrontBc = boxFront[0].style;
     styleBoxFrontBc.backgroundColor = "orangered";
@@ -150,6 +144,19 @@ calculation[0].addEventListener('click', function () {
     let boxShadow600 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k6 + 'px' + ' ' + stretchBS * k6 + 'px' + ' ' + colorBS[5];
     let boxShadow700 = widthBS + 'px' + ' ' + heightBS + 'px' + ' ' + radiusBS * k7 + 'px' + ' ' + stretchBS * k7 + 'px' + ' ' + colorBS[6];
 
+
+    /*--минимальная и максимальная омвещенность--*/
+    let minLux = Math.round(0.5 * quantityLamp * (+lightFlowLamp*0.04/+roomLength.value * +roomWidth.value));
+    let maxLux = Math.round(0.75 * quantityLamp * (+lightFlowLamp*0.09/+roomLength.value * +roomWidth.value));
+
+    console.log('lightFlowLamp', lightFlowLamp);
+    console.log('roomLengthValue', +roomLength.value);
+    console.log('roomWidthValue', +roomWidth.value);
+    console.log('quantityLamp', quantityLamp);
+
+    console.log('minLux', minLux);
+    console.log('maxLux', maxLux);
+    /*----минимальная и максимальная омвещенность----*/
     for (let item = 0; item < boxWhite.length; ++item) {
         newStyle7 = boxWhite[item].style;
         newStyle7.zIndex = 200;
@@ -276,9 +283,9 @@ calculation[0].addEventListener('click', function () {
                           <div>Количество светильников, шт.</div>
                           <div>${quantityLamp}</div>
                           <div>Минимальная освещенность, лк</div>
-                          <div>50</div>
+                          <div>${minLux}</div>
                           <div>Максимальная освещенность, лк</div>
-                          <div>530</div>
+                          <div>${maxLux}</div>
                           <div>Коэф. использования</div>
                           <div>0.94</div>
                        </div>
@@ -401,6 +408,7 @@ heightPlane.oninput = function () {
 /*--function value input range reserve-- */
 kReserve.oninput = function () {
     reserveValue.innerHTML = +kReserve.value;
+    reserveValue.innerHTML = +kReserve.value;
 };
 /* ----value input range height---- */
 
@@ -408,10 +416,10 @@ kReserve.oninput = function () {
 let roomLength = document.getElementById("roomLength");
 let roomLengthValue = document.getElementById("roomLengthValue");
 roomLengthValue.innerHTML = roomLength.value;
-
 roomLength.oninput = function () {
     roomLengthValue.innerHTML = +roomLength.value;
 };
+
 
 let roomWidth = document.getElementById("roomWidth");
 let roomWidthValue = document.getElementById("roomWidthValue");
@@ -419,6 +427,7 @@ roomWidthValue.innerHTML = roomWidth.value;
 roomWidth.oninput = function () {
     roomWidthValue.innerHTML = +roomWidth.value;
 };
+
 /*----range ширина и длина помещения----*/
 
 /*/!*--управление select увеличение списка настроек--*!/
@@ -446,6 +455,8 @@ roomLength.addEventListener('click', function () {
 
     divBox.style.width = getRoomLengthValue + 'px';
 });
+
+
 roomWidth.addEventListener('click', function () {
     let getRoomWidthValue = roomWidthValue.textContent * 40;
 
@@ -562,7 +573,7 @@ for (let i = 0, len = lampSubtype.length; i < len; i++) {
                         mainDiscription(date);
                         mainSpecifications(date);
                         mainDownloadInstructions(date);
-                        quantityLampF(date);
+                        lightFlowLampF(date);
                     }
                 });
                 return date;
@@ -571,7 +582,7 @@ for (let i = 0, len = lampSubtype.length; i < len; i++) {
 
 
             /*--получение данных характеристик из json--*/
-            function quantityLampF(date) {
+            function lightFlowLampF(date) {
                 let mainLightingName = date.map((el, item) => {
 
                     return (
