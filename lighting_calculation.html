@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container">
-   <!--панель выбора параметров-->
+   <!--панель выбора параметров помещения-->
    <div class="secParam">
       <div>
          <p class="textBolt">Характеристики помещения:</p>
@@ -30,22 +30,7 @@
          </div>
          <input class="decorRange" type="range" id="rangeHeight" min="1" max="5" value="2" step="0.2"/>
 
-         <!--      <select class="decorSelect">
-                 <option>75лк</option>
-                 <option>150лк</option>
-                 <option>300лк</option>
-                 <option>500лк</option>
-                 <option>700лк</option>
-               </select>-->
-
-         <!--   <div class="item-btn item-btn-set">
-               Больше настроек
-            </div>-->
-         <!--         <div class="item-btn hideSettingsBtn">
-                     Меньше настроек
-                  </div>-->
-
-
+         <!--панель выбора дополнительных параметров помещения-->
          <p class="textBolt">Дополнительный настройки:</p>
          <div class="rangeWrap">
             <p>Коэф. отражения потолка:</p><span id="reflectionCeilingValue"></span>
@@ -99,7 +84,6 @@
    <div class="secCalculation">
       <div class="wrapRoom">
          <div id="fieldRoom">
-
             <div class="grid">
                <div class="grid__item divBlock"></div>
                <div class="grid__item divBlock"></div>
@@ -615,15 +599,12 @@
                <div class="grid__item divBlock"></div>
 
 
-
             </div>
-
-            <!--           <div class="boxField"></div>-->
          </div>
       </div>
 
-      <!--включение popup выбора типа светильника-->
-      <div class="choiceLighting" id="choiceLighting" >
+      <!--включение popup выбора типа светильника с каталога-->
+      <div class="choiceLighting" id="choiceLighting">
          <div class="selectLighting">
             <div id="selectLightingName">
                Светильник: PRS/R ECO LED 32Вт (1032000100)
@@ -636,6 +617,7 @@
             <button class="btn-catalog-main" id="calculation-js">Расчет</button>
          </div>
       </div>
+      <!--характеристики светильника-->
       <div class="infoLightingMain" id="infoLightingMain">
          <div class="tabs-container">
             <ul class="tabs">
@@ -670,11 +652,12 @@
                   </div>
                </div>
                <p class="reg">
-                  <a href="#1" class="more-btn" id="btnDiscriptionOpenClose">Подробнее</a>
+                  <a href="#1" class="more-btn" id="btnDescriptionOpenClose">Подробнее</a>
                </p>
             </div>
          </div>
-         <div id="mainDiscription" class="hide">
+         <!--подробные характеристики светильника-->
+         <div id="mainDescription" class="hide">
             <div class="more-description-wrap">
                <p>PRS/R ECO LED 32Вт 4000лм</p>
                <div class="slider sliсkSlider">
@@ -796,7 +779,6 @@
    </div>
 </div>
 </div>
-
 
 <!--всплывющий popup выбота типа светильника-->
 <div class="b-popup" id="popup1">
@@ -996,8 +978,7 @@
    </div>
 </div>
 <!----уведомление о отправленной форме---->
-
-
+<!--уведомление о отправленной форме-->
 <div id="item-wrapper"></div>
 
 

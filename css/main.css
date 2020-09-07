@@ -1,12 +1,11 @@
-/* -- сброс стилей -- */
-
-/* Убираем внутренние отступы */
+/*--сброс стилей--*/
+/*--Убираем внутренние отступы--*/
 ul[class],
 ol[class] {
     padding: 0;
 }
 
-/* Убираем внешние отступы */
+/*--Убираем внешние отступы--*/
 body,
 h1,
 h2,
@@ -24,7 +23,7 @@ dd {
     margin: 0;
 }
 
-/* Выставляем основные настройки по-умолчанию для body */
+/*--Выставляем основные настройки по-умолчанию для body--*/
 body {
     /*  min-height: 100vh;*/
     scroll-behavior: smooth;
@@ -32,29 +31,29 @@ body {
     line-height: 1.5;
 }
 
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+/*--Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class--*/
 ul[class],
 ol[class] {
     list-style: none;
 }
 
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+/*--Элементы a, у которых нет класса, сбрасываем до дефолтных стилей--*/
 a:not([class]) {
     text-decoration-skip-ink: auto;
 }
 
-/* Упрощаем работу с изображениями */
+/*--Упрощаем работу с --*/
 img {
     max-width: 100%;
     display: block;
 }
 
-/* Указываем понятную периодичность в потоке данных у article*/
+/*--Указываем понятную периодичность в потоке данных у article--*/
 article > * + * {
     margin-top: 1em;
 }
 
-/* Наследуем шрифты для инпутов и кнопок */
+/*--Наследуем шрифты для инпутов и кнопок--*/
 input,
 button,
 textarea,
@@ -62,7 +61,7 @@ select {
     font: inherit;
 }
 
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+/*--Удаляем все анимации и переходы для людей, которые предпочитай их не использовать--*/
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -72,7 +71,7 @@ select {
     }
 }
 
-/* -- сброс стилей -- */
+/*--сброс стилей--*/
 body {
     font-family: 'Roboto-Regular';
     margin: 0;
@@ -87,17 +86,12 @@ body {
     margin: 10px 0 15px;
 }
 
-/*body {
-    margin: 100px 20%;
-    font-family: "Roboto";
-}*/
 .rangeWrap { /*--запрет выделения текста--*/
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
 }
 
 .container {
@@ -149,17 +143,6 @@ body {
     border: 2px solid #9f9f9f;
 }
 
-/*.wrapBox div {
-    box-sizing: border-box;
-}*/
-
-/*.boxField {
-    width: 39px;
-    height: 39px;
-    box-sizing: border-box;
-    border: 1px solid rgb(92, 92, 92);
-    overflow: hidden;
-}*/
 .lightingWrap {
     position: relative;
 }
@@ -265,6 +248,7 @@ body {
 }
 
 /*----оформление range----*/
+
 /*--оформление select--*/
 .decorSelect {
     position: relative;
@@ -287,41 +271,12 @@ option:hover {
     outline: none;
 }
 
-/*.item-btn {
-    text-align: center;
-    cursor: pointer;
-    color: #FF4518;
-    font-size: 14px;
-    margin-bottom: 20px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.item-btn:hover {
-    color: #a0a0a0;
-    font-size: 14px;
-}
-
-.item-btn:active {
-    color: black;
-}*/
-
 .item_text {
     flex-basis: 100%;
-    /*    overflow: hidden;*/
     height: 0;
     line-height: 1.4;
     margin-bottom: 15px;
 }
-
-/*
-.item_text.showText {
-    overflow: inherit;
-    height: auto;
-}*/
 
 .hideSettingsBtn {
     display: none;
@@ -360,11 +315,10 @@ option:hover {
     grid-gap: 1px;
 }
 
-/* styles just for demo */
+/*--grid стили--*/
 .grid__item {
     background-color: white;
     color: black;
-    /* styles for centering text */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -384,7 +338,6 @@ option:hover {
 ::-webkit-scrollbar-thumb {
     background-color: rgba(53, 49, 54, 0.52);
     border-radius: 9em;
-    /* box-shadow: inset 1px 1px 10px #f3faf7;*/
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -407,7 +360,6 @@ option:hover {
     position: fixed;
     top: 0;
     z-index: 2000;
-
     -webkit-animation-name: animOpacity1;
     -webkit-animation-duration: 0.3s;
     animation-name: animOpacity1;
@@ -419,9 +371,7 @@ option:hover {
     position: absolute;
     left: calc(50% - 525px);
     top: calc(50% - 300px);
-    /*margin: 10% auto 0 auto;*/
     width: 1050px;
-    /* height: 500px;*/
     padding: 10px;
     background-color: white;
     border-radius: 5px;
@@ -453,7 +403,7 @@ option:hover {
 
 }
 
-/*style img lighting */
+/*--оформление фото светильников--*/
 .containerCatalogLt {
     width: 1050px;
     min-width: 750px;
@@ -490,10 +440,6 @@ option:hover {
     box-shadow: 0 15px 20px 0 rgba(72, 77, 74, 0.3);
 }
 
-.buttons img:hover {
-
-}
-
 .buttons img {
     width: 115px;
     padding: 0 10px;
@@ -514,9 +460,7 @@ option:hover {
     overflow: hidden;
 }
 
-
-/* переключение class border */
-
+/*--переключение class border--*/
 .buttons div.active {
     border: 2px solid #FF4518;
     opacity: 1;
@@ -524,15 +468,13 @@ option:hover {
     background: #e1e1e1;
 }
 
-
-/* переключение class border */
+/*--переключение class border--*/
 
 .windows {
     flex: 1;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
-    /* height: 300px;*/
     max-height: 600px;
     min-height: 300px
 }
@@ -574,11 +516,10 @@ option:hover {
 }
 
 .wrap-catalog {
-    /*  height: 210px;*/
     border: 1px solid #a0a0a0;
 }
 
-/* скрываем переключатели radio и окна контента */
+/*--скрываем переключатели radio и окна контента--*/
 .window, .hidden {
     display: none;
 }
@@ -591,7 +532,7 @@ option:hover {
     border: 2px solid #FF4518;
 }
 
-/* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+/*--отобразить контент, связанный с вабранной радиокнопкой (input type="radio")--*/
 #tab-btn-1:checked ~ .windows #w1,
 #tab-btn-2:checked ~ .windows #w2,
 #tab-btn-3:checked ~ .windows #w3,
@@ -600,13 +541,12 @@ option:hover {
     display: block;
 }
 
-/* связываение кнопки и radio */
+/*--связываение кнопки и radio--*/
 #tab-btn-1:checked ~ .buttons [for="tab-btn-1"],
 #tab-btn-2:checked ~ .buttons [for="tab-btn-2"],
 #tab-btn-3:checked ~ .buttons [for="tab-btn-3"],
 #tab-btn-4:checked ~ .buttons [for="tab-btn-4"],
 #tab-btn-5:checked ~ .buttons [for="tab-btn-5"] {
-    /*  background-color: rgba(169, 168, 192, 0.64);*/
 }
 
 .sep-div {
@@ -658,7 +598,6 @@ option:hover {
 #btn12:hover,
 #btn13:hover,
 #btn14:hover {
-
     border: 2px solid #FF4518;
 }
 
@@ -681,7 +620,6 @@ option:hover {
 
 .border-content {
     width: 3px;
-    /*  height: 395px;*/
     margin: 10px 0 0 0;
     background: #aaaaaa;
 }
@@ -810,7 +748,6 @@ option:hover {
     line-height: 25px;
     box-sizing: border-box;
     border: 2px solid #FF4518;
-    border: 2px solid #FF4518;
     border-radius: 3px;
     background: #FF4518;
     cursor: pointer;
@@ -842,7 +779,6 @@ a:hover {
     color: black;
 }
 
-
 /*--KKC--*/
 .kkc_catalog_img {
     width: 400px;
@@ -854,7 +790,6 @@ a:hover {
 }
 
 /*--добавление картинки ККС через js--*/
-
 .lt001 {
     width: 400px;
     height: 400px;
@@ -1243,9 +1178,6 @@ p {
     position: relative;
     top: 350px;
     background-color: red;
-    /*    z-index: 1000;
-        width: 200px;
-        height: 10px;*/
 }
 
 /*----якорь для плавного перемещения экрана к основным настройкам----*/
@@ -1257,7 +1189,6 @@ p {
     justify-content: center;
     margin: 15px 0;
 }
-
 
 .color-0,
 .color-100,
@@ -1628,9 +1559,7 @@ input:focus:-ms-input-placeholder {
     position: absolute;
     left: calc(50% - 200px);
     top: calc(50% - 300px);
-    /*margin: 10% auto 0 auto;*/
     width: 400px;
-    /* height: 500px;*/
     padding: 10px;
     background-color: white;
     border-radius: 5px;
@@ -1662,11 +1591,6 @@ input:focus:-ms-input-placeholder {
 
 }
 
-/*@keyframes animatetop {
-    from {top: 100px; opacity:0}
-    to {top:0; opacity:1}
-}*/
-
 #popup2 {
     display: none;
 }
@@ -1679,7 +1603,7 @@ input:focus:-ms-input-placeholder {
     top: calc(50% - 20px);
     width: 200px;
     height: 40px;
-    padding: 10px 20px;
+    padding: 5px 20px 10px;
     background-color: orangered;
     box-shadow: 0 0 10px #000;
     text-transform: uppercase;
@@ -1706,7 +1630,6 @@ input:focus:-ms-input-placeholder {
     to {
         top: calc(50% - 20px);
     }
-
 }
 
 @-webkit-keyframes animOpacity2 {
