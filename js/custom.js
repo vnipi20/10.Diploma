@@ -17,7 +17,6 @@ let radiusBS = 15;
 let stretchBS = 10;
 let colorBS = ['#FB121A', '#FDAC02', '#F9F600', '#0CFD10', '#05EDEE', '#0817FB', '#FEFEFE'];
 
-
 let tree = [];
 let lightFlowLamp = 4000;
 
@@ -32,21 +31,19 @@ $('#fieldRoom').on('click', 'div', function () {
     }
 });
 
-
 $('#fieldRoom').click(function (event) {
 
     const addDivBox = function () {
         event.target.innerHTML = `<div class="lightingWrap">
-                                 <div class="boxFront"></div>
-                                 <div class="boxWhite"></div>
-                                 <div class="boxBlue"></div>
-                                 <div class="boxLightBlue"></div>
-                                 <div class="boxGreen"></div>
-                                 <div class="boxYellow"></div>
-                                 <div class="boxOrange"></div>
-                                  <div class="boxRed"></div>
-                                 
-                                 </div>`;
+                                     <div class="boxFront"></div>
+                                     <div class="boxWhite"></div>
+                                     <div class="boxBlue"></div>
+                                     <div class="boxLightBlue"></div>
+                                     <div class="boxGreen"></div>
+                                     <div class="boxYellow"></div>
+                                     <div class="boxOrange"></div>
+                                     <div class="boxRed"></div>
+                                     </div>`;
     };
     addDivBox();
 });
@@ -87,7 +84,6 @@ calculation.addEventListener('click', function () {
     let minLux = Math.round(0.5 * quantityLamp * (+lightFlowLamp * 0.04 / +roomLength.value * +roomWidth.value));
     let maxLux = Math.round(0.75 * quantityLamp * (+lightFlowLamp * 0.09 / +roomLength.value * +roomWidth.value));
     let kEfect = (kNk * 0.281).toFixed(2);
-    /*--скрин--*/
     /*----минимальная и максимальная освещенность----*/
     for (let item = 0; item < boxWhite.length; ++item) {
         newStyle7 = boxWhite[item].style;
@@ -131,7 +127,7 @@ calculation.addEventListener('click', function () {
 
     addfieldRoom = fieldRoom.style;
     addfieldRoom.backgroundColor = "#000638";
-    /*--скрин--*/
+
     /*--подключение ajax для отображение результатов расета--*/
     $(document).ready(function () {
         let getSomeDate = function () {
@@ -444,9 +440,8 @@ var options = {
     initialSlide: 0,
 };
 
-let atrTypeNum;
-/*--скрин--*/
 /*--перебор типов светильников--*/
+let atrTypeNum;
 for (let i = 0, len = lampSubtype.length; i < len; i++) {
     lampSubtype[i].addEventListener('click', function () {
 
