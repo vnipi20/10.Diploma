@@ -351,9 +351,7 @@ roomLength.addEventListener('input', function () {
     let getRoomLengthValue = roomLengthValue.textContent * 40;
 
     divBox.style.width = getRoomLengthValue + 'px';
-    console.log('getRoomLengthValue', getRoomLengthValue);
 });
-
 
 roomWidth.addEventListener('input', function () {
     let getRoomWidthValue = roomWidthValue.textContent * 40;
