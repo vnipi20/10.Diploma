@@ -83,50 +83,50 @@ calculation.addEventListener('click', function () {
     /*--минимальная, максимальная освещенность и К-использования--*/
     let minLux = Math.round(0.5 * quantityLamp * (+lightFlowLamp * 0.04 / +roomLength.value * +roomWidth.value));
     let maxLux = Math.round(0.75 * quantityLamp * (+lightFlowLamp * 0.09 / +roomLength.value * +roomWidth.value));
-    let kEfect = (kNk * 0.281).toFixed(2);
+    let kEffect = (kNk * 0.281).toFixed(2);
     /*----минимальная и максимальная освещенность----*/
     for (let item = 0; item < boxWhite.length; ++item) {
-        newStyle7 = boxWhite[item].style;
-        newStyle7.zIndex = 200;
-        newStyle7.boxShadow = boxShadow700;
+        newStyleWhite = boxWhite[item].style;
+        newStyleWhite.zIndex = 200;
+        newStyleWhite.boxShadow = boxShadow700;
     }
     for (let item = 0; item < boxBlue.length; ++item) {
-        newStyle6 = boxBlue[item].style;
-        newStyle6.zIndex = 300;
-        newStyle6.boxShadow = boxShadow600;
+        newStyleBlue = boxBlue[item].style;
+        newStyleBlue.zIndex = 300;
+        newStyleBlue.boxShadow = boxShadow600;
     }
     for (let item = 0; item < boxLightBlue.length; ++item) {
-        newStyle5 = boxLightBlue[item].style;
-        newStyle5.zIndex = 400;
-        newStyle5.boxShadow = boxShadow500;
+        newStyleLightBlue = boxLightBlue[item].style;
+        newStyleLightBlue.zIndex = 400;
+        newStyleLightBlue.boxShadow = boxShadow500;
     }
     for (let item = 0; item < boxGreen.length; ++item) {
-        newStyle4 = boxGreen[item].style;
-        newStyle4.zIndex = 500;
-        newStyle4.boxShadow = boxShadow400;
+        newStyleGreen = boxGreen[item].style;
+        newStyleGreen.zIndex = 500;
+        newStyleGreen.boxShadow = boxShadow400;
     }
     for (let item = 0; item < boxYellow.length; ++item) {
-        newStyle3 = boxYellow[item].style;
-        newStyle3.zIndex = 600;
-        newStyle3.boxShadow = boxShadow300;
+        newStyleYellow = boxYellow[item].style;
+        newStyleYellow.zIndex = 600;
+        newStyleYellow.boxShadow = boxShadow300;
     }
     for (let item = 0; item < boxOrange.length; ++item) {
-        newStyle2 = boxOrange[item].style;
-        newStyle2.zIndex = 800;
-        newStyle2.boxShadow = boxShadow200;
+        newStyleOrange = boxOrange[item].style;
+        newStyleOrange.zIndex = 800;
+        newStyleOrange.boxShadow = boxShadow200;
     }
     for (let item = 0; item < boxRed.length; ++item) {
-        newStyle = boxRed[item].style;
-        newStyle.zIndex = 1000;
-        newStyle.boxShadow = boxShadow100;
+        newStyleRed = boxRed[item].style;
+        newStyleRed.zIndex = 1000;
+        newStyleRed.boxShadow = boxShadow100;
     }
 
     for (let i = 0; i < wrapRoom.length; i++) { //--проходим циклом по всем элементам объекта
         wrapRoom[i].style.backgroundColor = "#000638"; //--устанавливаем красный цвет текста каждому элементу
     }
 
-    addfieldRoom = fieldRoom.style;
-    addfieldRoom.backgroundColor = "#000638";
+    addFieldRoom = fieldRoom.style;
+    addFieldRoom.backgroundColor = "#000638";
 
     /*--подключение ajax для отображение результатов расета--*/
     $(document).ready(function () {
@@ -207,7 +207,7 @@ calculation.addEventListener('click', function () {
                           <div>Максимальная освещенность, лк</div>
                           <div>${maxLux}</div>
                           <div>Коэф. использования</div>
-                          <div>${kEfect}</div>
+                          <div>${kEffect}</div>
                        </div>
                        <div class="results-btn-wrap">
                           <div class="results-btn">
@@ -275,7 +275,7 @@ calculation.addEventListener('click', function () {
     /*----подключение ajax для отображение результатов расчета----*/
 });
 
-/*--вставка значение range на старницк--*/
+/*--вставка значение range на страницу--*/
 let rangeHeight = document.getElementById("rangeHeight");
 let heightValue = document.getElementById("heightValue");
 heightValue.innerHTML = rangeHeight.value;
@@ -299,9 +299,9 @@ heightPlaneValue.innerHTML = heightPlane.value;
 let kReserve = document.getElementById("kReserve");
 let reserveValue = document.getElementById("reserveValue");
 reserveValue.innerHTML = kReserve.value;
-/*----вставка значение range на старницк----*/
+/*----вставка значение range на страницу----*/
 
-/*--фкнуция вставки значение range на старницк--*/
+/*--фкнуция вставки значение range на страницу--*/
 rangeHeight.oninput = function () {
     heightValue.innerHTML = +rangeHeight.value;
 };
